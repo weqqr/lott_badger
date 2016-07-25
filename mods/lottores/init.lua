@@ -604,7 +604,9 @@ minetest.register_node("lottores:ithildin_stone_0", {
 
 minetest.register_node("lottores:ithildin_stone_1", {
 	description = SL("Ithildin Stone"),
-	tiles = {"default_stone.png^ithildin_1.png"},
+	--tiles = {"default_stone.png^ithildin_1.png"},
+	tiles = {"ithildin_1.png"},
+	--tiles = {"ithildin_lamp_0.png"},
 	drawtype = 'glasslike',
 	walkable = false,
 	pointable = true,
@@ -643,6 +645,7 @@ minetest.register_node("lottores:ithildin_stonelamp_1", {
 minetest.register_node("lottores:ithildin_lamp_0", {
 	description = SL("Ithildin Lamp"),
 	tiles = {"ithildin_lamp_0.png"},
+	--tiles = {"default_stone.png^ithildin_1.png"},
 	paramtype = "light",
 	drawtype = 'glasslike',
 	walkable = false,
@@ -655,7 +658,7 @@ minetest.register_node("lottores:ithildin_lamp_0", {
 
 minetest.register_node("lottores:ithildin_lamp_1", {
 	description = SL("Ithildin Lamp"),
-	tiles = {"ithildin_lamp_1.png"},
+	tiles = {"default_stone.png^ithildin_lamp_1.png"},
 	paramtype = "light",
 	drawtype = 'glasslike',
 	walkable = true,

@@ -104,8 +104,36 @@ end
 -- 3 for checking protector overlaps
 
 protector.can_dig = function(r, pos, digger, onlyowner, infolevel)
-	if not digger then return false end
-	if not minetest.get_player_by_name(digger) then return false end
+
+	--print("function protector.can_dig")
+	--print("digger="..tostring(digger))
+	if not digger then 
+		--print("не указан digger")
+		return false 
+	end
+	
+	-- Find the protector nodes
+	local positions = minetest.find_nodes_in_area(
+		{x = pos.x - r, y = pos.y - r, z = pos.z - r},
+		{x = pos.x + r, y = pos.y + r, z = pos.z + r},
+		{"group:protector"})
+	
+	-- специально для мобов 
+	-- можно спавнится и копать только если нет протектов(проверка на areas в основной функции будет далее)	
+	if digger == "" then 	
+		if #positions < 1 then
+			--print("мобам можно спавнится или копать")
+			return true
+		else
+			--print("мобам нельзя спавнится или копать")
+			return false
+		end
+	end	
+	
+	if not minetest.get_player_by_name(digger) then 
+		--print("невозможно идентифицировать игрока")
+		return false 
+	end
 
 	-- Delprotect privileged users can override protections
 
@@ -119,12 +147,6 @@ protector.can_dig = function(r, pos, digger, onlyowner, infolevel)
 
 	if infolevel == 3 then infolevel = 1 end
 
-	-- Find the protector nodes
-
-	local positions = minetest.find_nodes_in_area(
-		{x = pos.x - r, y = pos.y - r, z = pos.z - r},
-		{x = pos.x + r, y = pos.y + r, z = pos.z + r},
-		{"group:protector"})
 
 	local dig_player = minetest.get_player_by_name(digger)
 	local meta, owner, members
