@@ -199,7 +199,7 @@ minetest.register_node(":default:grass_1", {
 	drop = {
 		max_items = 1,
 		items = {
-			{items = {'farming:wheat0'},rarity = 7},
+			{items = {'farming:wheat'},rarity = 7},
 			{items = {'farming:seed_cotton'},rarity = 7},
 			{items = {'default:grass_1'}},
 		}
@@ -233,7 +233,7 @@ for i=2,5 do
 		drop = {
 			max_items = 1,
 			items = {
-				{items = {'farming:wheat0'},rarity = 7},
+				{items = {'farming:wheat'},rarity = 7},
 				{items = {'farming:seed_cotton'},rarity = 7},
 				{items = {'default:grass_1'}},
 			}
@@ -324,7 +324,7 @@ end
 --
 -- Wheat
 --
-minetest.register_craftitem("farming:wheat0", {
+minetest.register_craftitem("farming:wheat", {
 	description = SL("Wheat"),
 	inventory_image = "farming_wheat.png",
 	on_place = function(itemstack, placer, pointed_thing)
@@ -354,7 +354,7 @@ minetest.register_craftitem("farming:bread", {
 })
 
 minetest.register_craft({
-	output = 'farming:wheat0 6',
+	output = 'farming:wheat 6',
 	recipe = {
 		{'farming:sheaf_wheat'},
 	}
@@ -363,7 +363,7 @@ minetest.register_craft({
 minetest.register_craft({
 	type = "shapeless",
 	output = "farming:flour",
-	recipe = {"farming:wheat0", "farming:wheat0", "farming:wheat0", "farming:wheat0"}
+	recipe = {"farming:wheat", "farming:wheat", "farming:wheat", "farming:wheat"}
 })
 
 minetest.register_craft({
