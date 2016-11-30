@@ -153,7 +153,7 @@ end
 local recipes = {
 --Base Potion
 	{"lottfarming:berries 5",        "lottpotion:drinking_glass_water",         "lottpotion:wine"},
-     {"farming:wheat0 3",        "lottpotion:drinking_glass_water",         "lottpotion:beer"},
+     {"farming:wheat 3",        "lottpotion:drinking_glass_water",         "lottpotion:beer"},
      {"bees:bottle_honey 6",        "lottpotion:drinking_glass_water",         "lottpotion:mead"},
      {"default:apple 5",        "lottpotion:drinking_glass_water",         "lottpotion:cider"},
      {"lottfarming:barley0 6",        "lottpotion:drinking_glass_water",         "lottpotion:ale"},
