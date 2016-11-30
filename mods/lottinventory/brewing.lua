@@ -43,7 +43,7 @@ local get_formspec = function(player,page)
                --Second
                .."label[1,3.2; "..SL("Ale").."]"
                .."item_image_button[4,3;1,1;lottpotion:drinking_glass_water;zcg:drinking_glass_water;]"
-               .."item_image_button[5,3;1,1;lottfarming:barley0;zcg:barley;6]"
+               .."item_image_button[5,3;1,1;lottfarming:barley;zcg:barley;6]"
                .."image[6,3;1,1;zcg_craft_arrow.png]"
                .."item_image_button[7,3;1,1;lottpotion:ale;zcg:ale;]"
                --Third
