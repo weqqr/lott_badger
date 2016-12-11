@@ -44,7 +44,7 @@ mobs:register_mob("mobs:bee", {
 
 --name, nodes, neighbors, min_light, max_light, interval, chance, active_object_count, min_height, max_height
 --mobs:spawn_specific(name, nodes, {"air"}, min_light, max_light, 30, chance, active_object_count, -31000, max_height)
-mobs:spawn_specific("mobs:bee", {"group:flower"}, {"air"}, 10, 20, 30, 5000, 1, 0, 1000)
+--mobs:spawn_specific("mobs:bee", {"group:flower"}, {"air"}, 10, 20, 30, 5000, 1, 0, 1000)
 
 mobs:register_egg("mobs:bee", SL("Bee"), "mobs_bee_inv.png", 0)
 
