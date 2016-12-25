@@ -1,6 +1,6 @@
-# lord_classes
+# races
 
-Handles player classes on the server
+Handles player races on the server
 
 ## Licenses
 Code: WTFPL
