@@ -155,13 +155,13 @@ function lottmobs.face_pos(self,pos)
 end
 ----
 
-function lottmobs_trader(self, clicker, entity, race, image, priv)
+function lottmobs_trader(self, clicker, entity, race, image, trades_with)
 	lottmobs.face_pos(self, clicker:getpos())
 	local player = clicker:get_player_name()
 	local unique_entity_id = self.id
 	local is_inventory = minetest.get_inventory({type="detached", name=unique_entity_id})
 	local same_race = false
-	if minetest.get_player_privs(player)[priv] ~= nil then
+	if races.get_race_and_gender(name)[1] == trades_with then
 		same_race = true
 	end
 	local move_put_take = {

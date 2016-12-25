@@ -45,7 +45,7 @@ mobs:register_mob("lottmobs:elf_trader", {
 	group_attack = true,
 	step = 1,
 	on_rightclick = function(self, clicker)
-		lottmobs_trader(self, clicker, entity, lottmobs.elf, "gui_elfbg.png", "GAMEelf")
+		lottmobs_trader(self, clicker, entity, lottmobs.elf, "gui_elfbg.png", "elf")
 	end,
 })
 
@@ -96,7 +96,7 @@ mobs:register_mob("lottmobs:human_trader", {
 	group_attack = true,
 	step = 1,
 	on_rightclick = function(self, clicker)
-		lottmobs_trader(self, clicker, entity, lottmobs.human, "gui_gondorbg.png", "GAMEman")
+		lottmobs_trader(self, clicker, entity, lottmobs.human, "gui_gondorbg.png", "man")
 	end,
 })
 
@@ -138,7 +138,7 @@ mobs:register_mob("lottmobs:hobbit_trader", {
 	sounds = {
 	},
 	on_rightclick = function(self, clicker)
-		lottmobs_trader(self, clicker, entity, lottmobs.hobbit, "gui_hobbitbg.png", "GAMEhobbit")
+		lottmobs_trader(self, clicker, entity, lottmobs.hobbit, "gui_hobbitbg.png", "hobbit")
 	end,
 })
 
@@ -195,6 +195,6 @@ mobs:register_mob("lottmobs:dwarf_trader", {
 	group_attack = true,
 	step = 1,
 	on_rightclick = function(self, clicker)
-		lottmobs_trader(self, clicker, entity, lottmobs.dwarf, "gui_angmarbg.png", "GAMEdwarf")
+		lottmobs_trader(self, clicker, entity, lottmobs.dwarf, "gui_angmarbg.png", "dwarf")
 	end,
 })
