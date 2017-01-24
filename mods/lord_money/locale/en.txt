@@ -1,4 +1,5 @@
 ### money.lua ###
+Diamond Coin	=	Diamond Coin
 Gold Coin	=	Gold Coin
 Silver Coin	=	Silver Coin
 Copper Coin	=	Copper Coin

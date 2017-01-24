@@ -1,4 +1,5 @@
 ### money.lua ###
+Diamond Coin	=	Алмазная монета
 Gold Coin	=	Золотая монета
 Silver Coin	=	Серебряная монета
 Copper Coin	=	Медная монета

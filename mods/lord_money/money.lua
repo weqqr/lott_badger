@@ -1,6 +1,13 @@
 local SL = lord.require_intllib()
 
 -- money
+minetest.register_craftitem("lord_money:diamond_coin", {
+	description = SL("Diamond Coin"),
+	inventory_image = "money_diamond_coin.png",
+	groups = {not_in_creative_inventory=1},
+	stack_max = 999,
+})
+
 minetest.register_craftitem("lord_money:gold_coin", {
 	description = SL("Gold Coin"),
 	inventory_image = "money_gold_coin.png",
