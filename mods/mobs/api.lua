@@ -9,6 +9,16 @@ local disable_blood = minetest.setting_getbool("mobs_disable_blood")
 mobs.protected = tonumber(minetest.setting_get("mobs_spawn_protected")) or 1
 mobs.remove = minetest.setting_getbool("remove_far_mobs")
 
+-- HACK:
+local function atan(x)
+	if x ~= x then
+		return 0
+	else
+		return math.atan(x)
+	end
+end
+
+
 function mobs:register_mob(name, def)
 	minetest.register_entity(name, {
 		stepheight = def.stepheight or 0.6,
@@ -205,7 +215,7 @@ function mobs:register_mob(name, def)
 			end]]--
 			--[[if self.name == "lottmobs:ent" then
 				print("lifetimer="..self.lifetimer.." dtime="..dtime);
-			end]]--	
+			end]]--
 
 			if not self.tamed then
 				self.lifetimer = self.lifetimer - dtime
@@ -652,7 +662,7 @@ function mobs:register_mob(name, def)
 						self.following = nil
 					else
 						local vec = {x = p.x - s.x, y = p.y - s.y, z = p.z - s.z}
-						yaw = (math.atan(vec.z / vec.x) + math.pi / 2) - self.rotate
+						yaw = (atan(vec.z / vec.x) + math.pi / 2) - self.rotate
 						if p.x > s.x then
 							yaw = yaw + math.pi
 						end
@@ -707,7 +717,7 @@ function mobs:register_mob(name, def)
 
 					if lp ~= nil then
 						local vec = {x = lp.x - s.x, y = lp.y - s.y, z = lp.z - s.z}
-						yaw = (math.atan(vec.z / vec.x) + math.pi / 2) - self.rotate
+						yaw = (atan(vec.z / vec.x) + math.pi / 2) - self.rotate
 						if lp.x > s.x then
 							yaw = yaw + math.pi
 						end
@@ -759,7 +769,7 @@ end
 				-- if water nearby then turn away
 				if lp then
 					local vec = {x = lp.x - s.x, y = lp.y - s.y, z = lp.z - s.z}
-					yaw = math.atan(vec.z / vec.x) + 3 * math.pi / 2 - self.rotate
+					yaw = atan(vec.z / vec.x) + 3 * math.pi / 2 - self.rotate
 					if lp.x > s.x then
 						yaw = yaw + math.pi
 					end
@@ -815,7 +825,7 @@ end
 				end
 
 				local vec = {x = p.x - s.x, y = p.y - s.y, z = p.z - s.z}
-				yaw = math.atan(vec.z / vec.x) + math.pi / 2 - self.rotate
+				yaw = atan(vec.z / vec.x) + math.pi / 2 - self.rotate
 				if p.x > s.x then
 					yaw = yaw + math.pi
 				end
@@ -943,7 +953,7 @@ end
 				end
 
 				local vec = {x = p.x - s.x, y = p.y - s.y, z = p.z - s.z}
-				yaw = (math.atan(vec.z / vec.x) + math.pi / 2) - self.rotate
+				yaw = (atan(vec.z / vec.x) + math.pi / 2) - self.rotate
 				if p.x > s.x then
 					yaw = yaw + math.pi
 				end
@@ -1016,7 +1026,7 @@ end
 				end
 
 				local vec = {x = p.x - s.x, y = p.y - s.y, z = p.z - s.z}
-				yaw = (math.atan(vec.z / vec.x) + math.pi / 2) - self.rotate
+				yaw = (atan(vec.z / vec.x) + math.pi / 2) - self.rotate
 				if p.x > s.x then
 					yaw = yaw + math.pi
 				end
@@ -1242,7 +1252,7 @@ function mobs:spawn_specific(name, nodes, neighbors, min_light, max_light, inter
 		interval = interval,
 		chance = chance,
 		action = function(pos, node, _, active_object_count_wider)
-			
+
 			-- do not spawn if too many active entities in area
 			if active_object_count_wider > active_object_count
 			or not mobs.spawning_mobs[name] then
@@ -1258,7 +1268,7 @@ function mobs:spawn_specific(name, nodes, neighbors, min_light, max_light, inter
 			and minetest.is_protected(pos, "") then
 			--	if name == "mobs:bee" then
 			--		print("нельзя спавнится внутри защищенной области");
-			--	end	
+			--	end
 				return
 			end
 
@@ -1300,7 +1310,7 @@ function mobs:spawn_specific(name, nodes, neighbors, min_light, max_light, inter
 			minetest.add_entity(pos, name)
 			--if name == "mobs:bee" then
 			--  print ("Spawned "..name.." at "..minetest.pos_to_string(pos).." on "..node.name.." near "..neighbors[1])
-			--end  
+			--end
 
 		end
 	})
