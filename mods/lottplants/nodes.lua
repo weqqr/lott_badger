@@ -4,9 +4,8 @@ local SL = lord.require_intllib()
 
 minetest.register_node("lottplants:alderleaf", {
 	description = SL("Alder Leaf"),
-	drawtype = "allfaces_optional",
-	visual_scale = 1.3,
-	waving = 1,
+	drawtype = "mesh",
+	mesh = "leaves_model.obj",
 	tiles = {"lottplants_alderleaf.png"},
 	paramtype = "light",
 	walkable=false,
@@ -36,9 +35,8 @@ minetest.register_node("lottplants:alderleaf", {
 
 minetest.register_node("lottplants:appleleaf", {
 	description = SL("Apple Leaf"),
-	drawtype = "allfaces_optional",
-	visual_scale = 1.3,
-	waving = 1,
+	drawtype = "mesh",
+	mesh = "leaves_model.obj",
 	tiles = {"lottplants_appleleaf.png"},
 	paramtype = "light",
 	walkable=false,
@@ -68,9 +66,8 @@ minetest.register_node("lottplants:appleleaf", {
 
 minetest.register_node("lottplants:birchleaf", {
 	description = SL("Birch Leaf"),
-	drawtype = "allfaces_optional",
-	visual_scale = 1.3,
-	waving = 1,
+	drawtype = "mesh",
+	mesh = "leaves_model.obj",
 	tiles = {"lottplants_birchleaf.png"},
 	paramtype = "light",
 	walkable=false,
@@ -100,9 +97,8 @@ minetest.register_node("lottplants:birchleaf", {
 
 minetest.register_node("lottplants:beechleaf", {
 	description = SL("Beech Leaf"),
-	drawtype = "allfaces_optional",
-	waving = 1,
-	visual_scale = 1.3,
+	drawtype = "mesh",
+	mesh = "leaves_model.obj",
 	tiles = {"lottplants_beechleaf.png"},
 	paramtype = "light",
 	walkable=false,
@@ -132,9 +128,8 @@ minetest.register_node("lottplants:beechleaf", {
 
 minetest.register_node("lottplants:culumaldaleaf", {
 	description = SL("Culumalda Leaf"),
-	drawtype = "allfaces_optional",
-	waving = 1,
-	visual_scale = 1.3,
+	drawtype = "mesh",
+	mesh = "leaves_model.obj",
 	tiles = {"lottplants_culumaldaleaf.png"},
 	paramtype = "light",
 	walkable=false,
@@ -164,9 +159,8 @@ minetest.register_node("lottplants:culumaldaleaf", {
 
 minetest.register_node("lottplants:yellowflowers", {
 	description = SL("Yellow Flowers on Culumalda Leaf"),
-	drawtype = "allfaces_optional",
-	waving = 1,
-	visual_scale = 1.3,
+	drawtype = "mesh",
+	mesh = "leaves_model.obj",
 	tiles = {"lottplants_yellowflowers.png"},
 	paramtype = "light",
 	walkable=false,
@@ -192,9 +186,8 @@ minetest.register_node("lottplants:yellowflowers", {
 
 minetest.register_node("lottplants:elmleaf", {
 	description = SL("Elm Leaf"),
-	drawtype = "allfaces_optional",
-	visual_scale = 1.3,
-	waving = 1,
+	drawtype = "mesh",
+	mesh = "leaves_model.obj",
 	tiles = {"lottplants_elmleaf.png"},
 	paramtype = "light",
 	walkable=false,
@@ -224,9 +217,8 @@ minetest.register_node("lottplants:elmleaf", {
 
 minetest.register_node("lottplants:firleaf", {
 	description = SL("Fir Leaf"),
-	drawtype = "allfaces_optional",
-	visual_scale = 1.3,
-	--waving = 1,
+	drawtype = "mesh",
+	mesh = "leaves_model.obj",
 	tiles = {"lottplants_firleaf.png"},
 	paramtype = "light",
 	walkable=false,
@@ -256,9 +248,8 @@ minetest.register_node("lottplants:firleaf", {
 
 minetest.register_node("lottplants:lebethronleaf", {
 	description = SL("Lebethron Leaf"),
-	drawtype = "allfaces_optional",
-	visual_scale = 1.3,
-	waving = 1,
+	drawtype = "mesh",
+	mesh = "leaves_model.obj",
 	tiles = {"lottplants_lebethronleaf.png"},
 	paramtype = "light",
 	walkable=false,
@@ -288,9 +279,8 @@ minetest.register_node("lottplants:lebethronleaf", {
 
 minetest.register_node("lottplants:mallornleaf", {
 	description = SL("Mallorn Leaf"),
-	drawtype = "allfaces_optional",
-	visual_scale = 1.3,
-	waving = 1,
+	drawtype = "mesh",
+	mesh = "leaves_model.obj",
 	tiles = {"lottplants_mallornleaf.png"},
 	paramtype = "light",
 	walkable=false,
@@ -319,9 +309,8 @@ minetest.register_node("lottplants:mallornleaf", {
 
 minetest.register_node("lottplants:pineleaf", {
 	description = SL("Pine Leaf"),
-	drawtype = "allfaces_optional",
-	visual_scale = 1.3,
-	--waving = 1,
+	drawtype = "mesh",
+	mesh = "leaves_model.obj",
 	tiles = {"lottplants_pineleaf.png"},
 	paramtype = "light",
 	walkable=false,
@@ -351,9 +340,8 @@ minetest.register_node("lottplants:pineleaf", {
 
 minetest.register_node("lottplants:plumleaf", {
 	description = SL("Plum Leaf"),
-	drawtype = "allfaces_optional",
-	visual_scale = 1.3,
-	waving = 1,
+	drawtype = "mesh",
+	mesh = "leaves_model.obj",
 	tiles = {"lottplants_plumleaf.png"},
 	paramtype = "light",
 	walkable=false,
@@ -383,9 +371,8 @@ minetest.register_node("lottplants:plumleaf", {
 
 minetest.register_node("lottplants:rowanleaf", {
 	description = SL("Rowan Leaf"),
-	drawtype = "allfaces_optional",
-	visual_scale = 1.3,
-	waving = 1,
+	drawtype = "mesh",
+	mesh = "leaves_model.obj",
 	tiles = {"lottplants_rowanleaf.png"},
 	walkable=false,
 		--climbable=true,
@@ -411,9 +398,8 @@ minetest.register_node("lottplants:rowanleaf", {
 
 minetest.register_node("lottplants:rowanberry", {
 	description = SL("Rowan Leaf with Berries"),
-	drawtype = "allfaces_optional",
-	visual_scale = 1.3,
-	waving = 1,
+	drawtype = "mesh",
+	mesh = "leaves_model.obj",
 	tiles = {"lottplants_rowanleaf.png^lottplants_rowanberry.png"},
 	paramtype = "light",
 	walkable=false,
@@ -438,9 +424,8 @@ minetest.register_node("lottplants:rowanberry", {
 
 minetest.register_node("lottplants:whiteleaf", {
 	description = SL("White Leaf"),
-	drawtype = "allfaces_optional",
-	visual_scale = 1.3,
-	waving = 1,
+	drawtype = "mesh",
+	mesh = "leaves_model.obj",
 	tiles = {"lottplants_whiteleaf.png"},
 	paramtype = "light",
 	walkable=false,
@@ -470,9 +455,8 @@ minetest.register_node("lottplants:whiteleaf", {
 
 minetest.register_node("lottplants:yavannamireleaf", {
 	description = SL("Yavannamire Leaf"),
-	drawtype = "allfaces_optional",
-	visual_scale = 1.3,
-	waving = 1,
+	drawtype = "mesh",
+	mesh = "leaves_model.obj",
 	tiles = {"lottplants_yavannamireleaf.png"},
 	paramtype = "light",
 	walkable=false,
@@ -503,9 +487,8 @@ minetest.register_node("lottplants:yavannamireleaf", {
 minetest.register_alias("lottmapgen:mirkleaves", "lottplants:mirkleaf")
 minetest.register_node("lottplants:mirkleaf", {
 	description = SL("Mirkwood Leaves"),
-	drawtype = "allfaces_optional",
-	visual_scale = 1.3,
-	waving = 1,
+	drawtype = "mesh",
+	mesh = "leaves_model.obj",
 	tiles = {"lottplants_mirkleaf.png"},
 	paramtype = "light",
 	sunlight_propagates = false,
@@ -560,34 +543,34 @@ minetest.register_node("lottplants:pinetree", {
 	on_place = function(itemstack, placer, pointed_thing)
 		if pointed_thing.type == "node" and
 			minetest.registered_nodes[minetest.get_node(pointed_thing.above).name].buildable_to == true then
-			
+
 			local p0 = pointed_thing.under
 			local p1 = pointed_thing.above
 			local param2 = 0
 			local p3 = {x = p1.x, y = p1.y, z = p1.z}
 			p3.y = p3.y + 1
-			
+
 			if minetest.is_protected(p1, placer:get_player_name()) or
 			minetest.is_protected(p3, placer:get_player_name()) then
 				minetest.record_protection_violation(p1, placer:get_player_name())
 				return itemstack
 			end
-			
+
 			local placer_pos = placer:getpos()
 			if placer_pos then
 				local dir = {}
 				local x = math.abs(placer_pos.x - p1.x)
 				local y = math.abs(placer_pos.y - p1.y +1)  -- единичку добавляем что бы получить смещение относительно головы игрока (более реально)
 				local z = math.abs(placer_pos.z - p1.z)
-				
+
 				if z>x then param2 = 6 else param2 = 13 end
 				if y>math.max(x,z) then param2 = 0 end
-				
+
 				--print(tostring(x)..","..tostring(y)..","..tostring(z))
 				--print(tostring(param2))
 			end
 			minetest.set_node(p1,{name = "lottplants:pinetrunk", param2 = param2})
-			if not minetest.setting_getbool("creative_mode") then	
+			if not minetest.setting_getbool("creative_mode") then
 				itemstack:take_item()
 			end
 			return itemstack
@@ -618,34 +601,34 @@ minetest.register_node("lottplants:birchtree", {
 	on_place = function(itemstack, placer, pointed_thing)
 		if pointed_thing.type == "node" and
 			minetest.registered_nodes[minetest.get_node(pointed_thing.above).name].buildable_to == true then
-			
+
 			local p0 = pointed_thing.under
 			local p1 = pointed_thing.above
 			local param2 = 0
 			local p3 = {x = p1.x, y = p1.y, z = p1.z}
 			p3.y = p3.y + 1
-			
+
 			if minetest.is_protected(p1, placer:get_player_name()) or
 			minetest.is_protected(p3, placer:get_player_name()) then
 				minetest.record_protection_violation(p1, placer:get_player_name())
 				return itemstack
 			end
-			
+
 			local placer_pos = placer:getpos()
 			if placer_pos then
 				local dir = {}
 				local x = math.abs(placer_pos.x - p1.x)
 				local y = math.abs(placer_pos.y - p1.y +1)  -- единичку добавляем что бы получить смещение относительно головы игрока (более реально)
 				local z = math.abs(placer_pos.z - p1.z)
-				
+
 				if z>x then param2 = 6 else param2 = 13 end
 				if y>math.max(x,z) then param2 = 0 end
-				
+
 				--print(tostring(x)..","..tostring(y)..","..tostring(z))
 				--print(tostring(param2))
 			end
 			minetest.set_node(p1,{name = "lottplants:birchtrunk", param2 = param2})
-			if not minetest.setting_getbool("creative_mode") then	
+			if not minetest.setting_getbool("creative_mode") then
 				itemstack:take_item()
 			end
 			return itemstack
@@ -676,34 +659,34 @@ minetest.register_node("lottplants:aldertree", {
 	on_place = function(itemstack, placer, pointed_thing)
 		if pointed_thing.type == "node" and
 			minetest.registered_nodes[minetest.get_node(pointed_thing.above).name].buildable_to == true then
-			
+
 			local p0 = pointed_thing.under
 			local p1 = pointed_thing.above
 			local param2 = 0
 			local p3 = {x = p1.x, y = p1.y, z = p1.z}
 			p3.y = p3.y + 1
-			
+
 			if minetest.is_protected(p1, placer:get_player_name()) or
 			minetest.is_protected(p3, placer:get_player_name()) then
 				minetest.record_protection_violation(p1, placer:get_player_name())
 				return itemstack
 			end
-			
+
 			local placer_pos = placer:getpos()
 			if placer_pos then
 				local dir = {}
 				local x = math.abs(placer_pos.x - p1.x)
 				local y = math.abs(placer_pos.y - p1.y +1)  -- единичку добавляем что бы получить смещение относительно головы игрока (более реально)
 				local z = math.abs(placer_pos.z - p1.z)
-				
+
 				if z>x then param2 = 6 else param2 = 13 end
 				if y>math.max(x,z) then param2 = 0 end
-				
+
 				--print(tostring(x)..","..tostring(y)..","..tostring(z))
 				--print(tostring(param2))
 			end
 			minetest.set_node(p1,{name = "lottplants:aldertrunk", param2 = param2})
-			if not minetest.setting_getbool("creative_mode") then	
+			if not minetest.setting_getbool("creative_mode") then
 				itemstack:take_item()
 			end
 			return itemstack
@@ -734,34 +717,34 @@ minetest.register_node("lottplants:lebethrontree", {
 	on_place = function(itemstack, placer, pointed_thing)
 		if pointed_thing.type == "node" and
 			minetest.registered_nodes[minetest.get_node(pointed_thing.above).name].buildable_to == true then
-			
+
 			local p0 = pointed_thing.under
 			local p1 = pointed_thing.above
 			local param2 = 0
 			local p3 = {x = p1.x, y = p1.y, z = p1.z}
 			p3.y = p3.y + 1
-			
+
 			if minetest.is_protected(p1, placer:get_player_name()) or
 			minetest.is_protected(p3, placer:get_player_name()) then
 				minetest.record_protection_violation(p1, placer:get_player_name())
 				return itemstack
 			end
-			
+
 			local placer_pos = placer:getpos()
 			if placer_pos then
 				local dir = {}
 				local x = math.abs(placer_pos.x - p1.x)
 				local y = math.abs(placer_pos.y - p1.y +1)  -- единичку добавляем что бы получить смещение относительно головы игрока (более реально)
 				local z = math.abs(placer_pos.z - p1.z)
-				
+
 				if z>x then param2 = 6 else param2 = 13 end
 				if y>math.max(x,z) then param2 = 0 end
-				
+
 				--print(tostring(x)..","..tostring(y)..","..tostring(z))
 				--print(tostring(param2))
 			end
 			minetest.set_node(p1,{name = "lottplants:lebethrontrunk", param2 = param2})
-			if not minetest.setting_getbool("creative_mode") then	
+			if not minetest.setting_getbool("creative_mode") then
 				itemstack:take_item()
 			end
 			return itemstack
@@ -792,34 +775,34 @@ minetest.register_node("lottplants:mallorntree", {
 	on_place = function(itemstack, placer, pointed_thing)
 		if pointed_thing.type == "node" and
 			minetest.registered_nodes[minetest.get_node(pointed_thing.above).name].buildable_to == true then
-			
+
 			local p0 = pointed_thing.under
 			local p1 = pointed_thing.above
 			local param2 = 0
 			local p3 = {x = p1.x, y = p1.y, z = p1.z}
 			p3.y = p3.y + 1
-			
+
 			if minetest.is_protected(p1, placer:get_player_name()) or
 			minetest.is_protected(p3, placer:get_player_name()) then
 				minetest.record_protection_violation(p1, placer:get_player_name())
 				return itemstack
 			end
-			
+
 			local placer_pos = placer:getpos()
 			if placer_pos then
 				local dir = {}
 				local x = math.abs(placer_pos.x - p1.x)
 				local y = math.abs(placer_pos.y - p1.y +1)  -- единичку добавляем что бы получить смещение относительно головы игрока (более реально)
 				local z = math.abs(placer_pos.z - p1.z)
-				
+
 				if z>x then param2 = 6 else param2 = 13 end
 				if y>math.max(x,z) then param2 = 0 end
-				
+
 				--print(tostring(x)..","..tostring(y)..","..tostring(z))
 				--print(tostring(param2))
 			end
 			minetest.set_node(p1,{name = "lottplants:mallorntrunk", param2 = param2})
-			if not minetest.setting_getbool("creative_mode") then	
+			if not minetest.setting_getbool("creative_mode") then
 				itemstack:take_item()
 			end
 			return itemstack
@@ -868,34 +851,34 @@ minetest.register_node("lottplants:mallorntree_young", {
 	on_place = function(itemstack, placer, pointed_thing)
 		if pointed_thing.type == "node" and
 			minetest.registered_nodes[minetest.get_node(pointed_thing.above).name].buildable_to == true then
-			
+
 			local p0 = pointed_thing.under
 			local p1 = pointed_thing.above
 			local param2 = 0
 			local p3 = {x = p1.x, y = p1.y, z = p1.z}
 			p3.y = p3.y + 1
-			
+
 			if minetest.is_protected(p1, placer:get_player_name()) or
 			minetest.is_protected(p3, placer:get_player_name()) then
 				minetest.record_protection_violation(p1, placer:get_player_name())
 				return itemstack
 			end
-			
+
 			local placer_pos = placer:getpos()
 			if placer_pos then
 				local dir = {}
 				local x = math.abs(placer_pos.x - p1.x)
 				local y = math.abs(placer_pos.y - p1.y +1)  -- единичку добавляем что бы получить смещение относительно головы игрока (более реально)
 				local z = math.abs(placer_pos.z - p1.z)
-				
+
 				if z>x then param2 = 6 else param2 = 13 end
 				if y>math.max(x,z) then param2 = 0 end
-				
+
 				--print(tostring(x)..","..tostring(y)..","..tostring(z))
 				--print(tostring(param2))
 			end
 			minetest.set_node(p1,{name = "lottplants:mallorntrunk_young", param2 = param2})
-			if not minetest.setting_getbool("creative_mode") then	
+			if not minetest.setting_getbool("creative_mode") then
 				itemstack:take_item()
 			end
 			return itemstack

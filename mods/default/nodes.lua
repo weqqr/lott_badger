@@ -418,11 +418,10 @@ minetest.register_node("default:junglewood", {
 
 minetest.register_node("default:jungleleaves", {
 	description = SL("Jungle Leaves"),
-	drawtype = "allfaces_optional",
-	visual_scale = 1.3,
+	drawtype = "mesh",
+	mesh = "leaves_model.obj",
 	tiles = {"default_jungleleaves.png"},
 	paramtype = "light",
-	waving = 1,
 	is_ground_content = false,
 	walkable=false,
 	climbable=true,
@@ -483,8 +482,8 @@ minetest.register_node("default:junglegrass", {
 
 minetest.register_node("default:leaves", {
 	description = SL("Leaves"),
-	drawtype = "allfaces_optional",
-	visual_scale = 1.3,
+	drawtype = "mesh",
+	mesh = "leaves_model.obj",
 	tiles = {"default_leaves.png"},
 	paramtype = "light",
 	walkable=false,
@@ -496,7 +495,6 @@ minetest.register_node("default:leaves", {
 	liquid_renewable = false,
 	liquid_range = 0,
 
-	waving = 1,
 	is_ground_content = false,
 	groups = {snappy=3, leafdecay=3, flammable=2, leaves=1},
 	drop = {
