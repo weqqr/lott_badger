@@ -30,7 +30,7 @@ function stairs.register_stair(subname, recipeitem, groups, images, description,
 
 			local p0 = pointed_thing.under  -- куда смотрим
 			local p1 = pointed_thing.above  -- куда ставим
-			local p3 = placer:getpos()
+			local p3 = placer:getpos()      -- позиция игрока
 			local param2 = 0
 			local p1_={x=p1.x,y=p1.y+1,z=p1.z} -- узел над местом установки
 			
@@ -46,10 +46,24 @@ function stairs.register_stair(subname, recipeitem, groups, images, description,
 				y = (p1.y - p3.y),
 				z = (p1.z - p3.z)
 				}
-			param2 = minetest.dir_to_facedir(dir)  -- определяем направление по сторонам света
+			param2 = minetest.dir_to_facedir(dir)  -- определяем направление относительно игрока
+			-- 2 - игрок севернее   надо 4 если на стену
+			-- 1 - игрок западнее	надо 19
+			-- 3 - игрок восточнее	надо 13
+			-- 0 - игрок южнее		надо 10
 			
-			local y1 = (p0.y - p1.y)  -- ставим ли на потолок?
-			if y1>0 then 
+			-- стороны света и координаты
+			-- +z север, -z юг
+			-- +x восток, -x запад
+			
+			--         С
+			--        +z
+			--   З -x    +x В
+			--        -z
+			--         Ю
+			
+			local y1 = (p0.y - p1.y)  
+			if y1>0 then 			-- ставим на потолок
 				if param2==0 then
 					param2=20
 				elseif param2==1 then
@@ -60,6 +74,21 @@ function stairs.register_stair(subname, recipeitem, groups, images, description,
 					param2=21 
 				end
 			end
+			
+			if y1==0 then 			-- ставим на стену
+				if param2==0 then
+					param2=10
+				elseif param2==1 then
+					param2=19 
+				elseif param2==2 then
+					param2=4 
+				else
+					param2=13 
+				end
+			end
+			
+			
+			
 			--print("param2="..tostring(param2))
 			minetest.set_node(p1,{name = "stairs:stair_" .. subname, param2 = param2})
 			if not minetest.setting_getbool("creative_mode") then	
