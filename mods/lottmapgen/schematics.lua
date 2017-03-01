@@ -1,245 +1,84 @@
 lottmapgen = {}
 
-local areas_mod = minetest.get_modpath("areas")
+local areas_mod = minetest.global_exists("areas")
 local protect_houses = minetest.setting_getbool("protect_structures") or true
 
 local lottmapgen_list = {
-    { "Angmar Fort", "angmarfort"},
-    { "Gondor Fort", "gondorfort"},
-    { "Rohan Fort", "rohanfort"},
-    { "Orc Fort", "orcfort"},
-    { "Mallorn House", "mallornhouse"},
-    { "Lorien House", "lorienhouse"}, --Different version of "mallornhouse", made by fireuser
-    { "Mirkwood House", "mirkhouse"},
-    { "Hobbit Hole", "hobbithole"},
+	-- Description      Technical name  Area name        Area owner       Area bounding box (from placement point)
+	{ "Angmar Fort",    "angmarfort",   "Angmar Fort",   "Orc Guard",     {x= 4, y=15, z=4}, {x=22, y=25, z=22} },
+	{ "Gondor Fort",    "gondorfort",   "Gondor Castle", "Gondor Guard",  {x=-2, y=15, z=5}, {x=23, y=35, z=24} },
+	{ "Rohan Fort",     "rohanfort",    "Rohan Fort",    "Rohan Guard",   {x= 4, y=15, z=4}, {x=29, y=25, z=29} },
+	{ "Orc Fort",       "orcfort",      "Orc Fort",      "Orc Guard",     {x= 4, y=15, z=4}, {x=26, y=45, z=26} },
+	{ "Mallorn House",  "mallornhouse", "Elven House",   "Elven Guard",   {x= 3, y=15, z=3}, {x=10, y=35, z=10} },
+	{ "Lorien House",   "lorienhouse",  "Elven House",   "Elven Guard",   {x= 2, y=15, z=2}, {x=12, y=45, z=12} },
+	{ "Mirkwood House", "mirkhouse",    "Elven House",   "Elven Guard",   {x= 4, y=15, z=4}, {x=15, y=30, z=15} },
+	{ "Hobbit Hole",    "hobbithole",   "Hobbit Hole",   "Hobbit Family", {x= 0, y=15, z=0}, {x=30, y=10, z=20} },
 }
 
-for i in ipairs(lottmapgen_list) do
-    local builddesc = lottmapgen_list[i][1]
-    local build = lottmapgen_list[i][2]
-    minetest.register_node("lottmapgen:"..build, {
-        description = builddesc,
-        drawtype = "glasslike",
-        walkable = false,
-        tiles = {"lottother_air.png"},
-        pointable = false,
-        sunlight_propagates = true,
-        is_ground_content = true,
-        groups = {not_in_creative_inventory = 1},
-        on_place = function(itemstack, placer, pointed_thing)
-            if pointed_thing.above then
-                local file = io.open(minetest.get_modpath("lottmapgen").."/schems/"..build..".we")
-                local value = file:read("*a")
-                file:close()
-                local p = pointed_thing.above
-                p.x = p.x - 5
-                p.z = p.z - 2
-                local count = worldedit.deserialize(pointed_thing.above, value)
-                itemstack:take_item()
-            end
-            return itemstack
-        end,
-    })
+local buildings = {}
+
+local function place_building(name, pos, offset1, offset2, area_name, area_owner)
+	worldedit.deserialize(pos, buildings[name])
+	if areas_mod and protect_houses then
+		local pos1 = {
+			x = pos.x - offset1.x,
+			y = pos.y - offset1.y,
+			z = pos.z - offset1.z,
+		}
+		local pos2 = {
+			x = pos.x + offset2.x,
+			y = pos.y + offset2.y,
+			z = pos.z + offset2.z,
+		}
+		areas:add(area_owner, area_name, pos1, pos2, nil)
+		areas:save()
+	end
 end
 
-minetest.register_abm({
-    nodenames = {"lottmapgen:lorienhouse"},
-    interval = 1,
-	chance = 1,
-     action = function(pos)
-          if pos then
-               local file = io.open(minetest.get_modpath("lottmapgen").."/schems/lorienhouse.we")
-               local value = file:read("*a")
-               file:close()
-               local p = pos
-               p.x = p.x - 5
-               p.z = p.z - 2
-               local count = worldedit.deserialize(pos, value)
-               if areas_mod ~= nil and protect_houses == true then
-                    local pos1 = {x = pos.x - 2, y = pos.y - 15, z = pos.z - 2}
-                    local pos2 = {x = pos.x + 12, y = pos.y + 45, z = pos.z + 12}
-                    areas:add("Elven Guard", "Elven House", pos1, pos2, nil)
-                    areas:save()
-               end
-          end
-     end,
-})
+local fmt = string.format
+local function load_building(name)
+	local filename = fmt("%s/schems/%s.we", minetest.get_modpath("lottmapgen"), name)
+	local file = io.open(filename)
+	local content = file:read("*a")
+	file:close()
+	buildings[name] = content
+end
 
-minetest.register_abm({
-    nodenames = {"lottmapgen:mallornhouse"},
-    interval = 1,
-	chance = 1,
-     action = function(pos)
-          if pos then
-               local file = io.open(minetest.get_modpath("lottmapgen").."/schems/mallornhouse.we")
-               local value = file:read("*a")
-               file:close()
-               local p = pos
-               p.x = p.x - 5
-               p.z = p.z - 2
-               local count = worldedit.deserialize(pos, value)
-               if areas_mod ~= nil and protect_houses == true then
-                    local pos1 = {x = pos.x - 3, y = pos.y - 15, z = pos.z - 3}
-                    local pos2 = {x = pos.x + 10, y = pos.y + 35, z = pos.z + 10}
-                    areas:add("Elven Guard", "Elven House", pos1, pos2, nil)
-                    areas:save()
-               end
-          end
-     end,
-})
+for i in ipairs(lottmapgen_list) do
+	local description = lottmapgen_list[i][1]
+	local name = lottmapgen_list[i][2]
+	local area_name = lottmapgen_list[i][3]
+	local area_owner = lottmapgen_list[i][4]
+	local offset1 = lottmapgen_list[i][5]
+	local offset2 = lottmapgen_list[i][6]
 
-minetest.register_abm({
-    nodenames = {"lottmapgen:angmarfort"},
-    	interval = 5,
-	chance = 1,
-     action = function(pos)
-          if pos then
-               local file = io.open(minetest.get_modpath("lottmapgen").."/schems/angmarfort.we")
-               local value = file:read("*a")
-               file:close()
-               local p = pos
-               p.x = p.x - 5
-               p.z = p.z - 2
-               local count = worldedit.deserialize(pos, value)
-               if areas_mod ~= nil and protect_houses == true then
-                   local pos1 = {x = pos.x - 4, y = pos.y - 15, z = pos.z - 4}
-                   local pos2 = {x = pos.x + 22, y = pos.y + 25, z = pos.z + 22}
-                   areas:add("Orc Guard", "Angmar Fort", pos1, pos2, nil)
-                   areas:save()
-               end
-          end
-     end,
-})
+	load_building(name)
 
-minetest.register_abm({
-    nodenames = {"lottmapgen:gondorfort"},
-	interval = 1,
-	chance = 1,
-    action = function(pos)
-        if pos then
-               local file = io.open(minetest.get_modpath("lottmapgen").."/schems/gondorfort.we")
-               local value = file:read("*a")
-               file:close()
-               local p = pos
-               p.x = p.x - 5
-               p.z = p.z - 2
-               local count = worldedit.deserialize(pos, value)
-               if areas_mod ~= nil and protect_houses == true then
-                   local pos1 = {x = pos.x + 2, y = pos.y - 15, z = pos.z - 5}
-                   local pos2 = {x = pos.x + 23, y = pos.y + 35, z = pos.z + 24}
-                   areas:add("Gondor Guard", "Gondor Castle", pos1, pos2, nil)
-                   areas:save()
-               end
-          end
-     end,
-})
+	-- The node being placed by the mapgen
+	minetest.register_node("lottmapgen:"..name, {
+		description = description,
+		drawtype = "glasslike",
+		walkable = false,
+		tiles = {"lottother_air.png"},
+		pointable = false,
+		sunlight_propagates = true,
+		is_ground_content = true,
+		groups = {not_in_creative_inventory = 1},
+		on_place = function(itemstack, placer, pointed_thing)
+			local pos = pointed_thing.above
+			place_building(name, pos, offset1, offset2, area_name, area_owner)
+			return itemstack
+		end,
+	})
 
-minetest.register_abm({
-    nodenames = {"lottmapgen:hobbithole"},
-    	interval = 1,
-	chance = 1,
-     action = function(pos)
-          if pos then
-               local file = io.open(minetest.get_modpath("lottmapgen").."/schems/hobbithole.we")
-               local value = file:read("*a")
-               file:close()
-               local p = pos
-               p.x = p.x - 5
-               p.z = p.z - 2
-               local count = worldedit.deserialize(pos, value)
-               if areas_mod ~= nil and protect_houses == true then
-                   local pos1 = {x = pos.x, y = pos.y - 15, z = pos.z}
-                   local pos2 = {x = pos.x + 30, y = pos.y + 10, z = pos.z + 20}
-                   areas:add("Hobbit Family", "Hobbit Hole", pos1, pos2, nil)
-                   areas:save()
-               end
-          end
-     end,
-})
-
-minetest.register_abm({
-    nodenames = {"lottmapgen:orcfort"},
-    interval = 1,
-	chance = 1,
-     action = function(pos)
-          if pos then
-               local file = io.open(minetest.get_modpath("lottmapgen").."/schems/orcfort.we")
-               local value = file:read("*a")
-               file:close()
-               local p = pos
-               p.x = p.x - 5
-               p.z = p.z - 2
-               local count = worldedit.deserialize(pos, value)
-               if areas_mod ~= nil and protect_houses == true then
-                   local pos1 = {x = pos.x - 4, y = pos.y - 15, z = pos.z - 4}
-                   local pos2 = {x = pos.x + 26, y = pos.y + 45, z = pos.z + 26}
-                   areas:add("Orc Guard", "Orc Fort", pos1, pos2, nil)
-                   areas:save()
-               end
-          end
-     end,
-})
-
-minetest.register_abm({
-    nodenames = {"lottmapgen:mirkhouse"},
-    interval = 5,
-	chance = 1,
-     action = function(pos)
-          if pos then
-               local file = io.open(minetest.get_modpath("lottmapgen").."/schems/mirkhouse.we")
-               local value = file:read("*a")
-               file:close()
-               local p = pos
-               p.x = p.x - 5
-               p.z = p.z - 2
-               local count = worldedit.deserialize(pos, value)
-               if areas_mod ~= nil and protect_houses == true then
-                   local pos1 = {x = pos.x - 4, y = pos.y - 15, z = pos.z - 4}
-                   local pos2 = {x = pos.x + 15, y = pos.y + 30, z = pos.z + 15}
-                   areas:add("Elven Guard", "Elven House", pos1, pos2, nil)
-                   areas:save()
-               end
-          end
-     end,
-})
-
-minetest.register_abm({
-    nodenames = {"lottmapgen:rohanfort"},
-    interval = 1,
-	chance = 1,
-     action = function(pos)
-          if pos then
-               local file = io.open(minetest.get_modpath("lottmapgen").."/schems/rohanfort.we")
-               local value = file:read("*a")
-               file:close()
-               local p = pos
-               p.x = p.x - 5
-               p.z = p.z - 2
-               local count = worldedit.deserialize(pos, value)
-               if areas_mod ~= nil and protect_houses == true then
-                   local pos1 = {x = pos.x - 4, y = pos.y - 15, z = pos.z - 4}
-                   local pos2 = {x = pos.x + 29, y = pos.y + 25, z = pos.z + 29}
-                   areas:add("Rohan Guard", "Rohan Fort", pos1, pos2, nil)
-                   areas:save()
-               end
-          end
-     end,
-})
-
-minetest.register_abm({
-	nodenames = {"lottmapgen:gondorfort","lottmapgen:hobbithole","lottmapgen:orcfort","lottmapgen:rohanfort","lottmapgen:mallornhouse","lottmapgen:lorienhouse"},
-	interval = 4,
-	chance = 1,
-	action = function(pos, node, active_object_count, active_object_count_wider)
-		minetest.remove_node(pos)
-	end,
-})
-
-minetest.register_abm({
-	nodenames = {"lottmapgen:angmarfort","lottmapgen:mirkhouse"},
-	interval = 8,
-	chance = 1,
-	action = function(pos, node, active_object_count, active_object_count_wider)
-		minetest.remove_node(pos)
-	end,
-})
+	-- ABM that places a building
+	minetest.register_abm({
+		nodenames = {"lottmapgen:"..name},
+		interval = 0.1,
+		chance = 1,
+		action = function(pos)
+			minetest.remove_node(pos)
+			place_building(name, pos, offset1, offset2, area_name, area_owner)
+		end,
+	})
+end
