@@ -2,6 +2,9 @@ local SL = lord.require_intllib()
 
 screwdriver = {}
 
+--
+-- следующий диапазон
+-- 
 local function nextrange(x, max)
 	x = x + 1
 	if x > max then
@@ -12,9 +15,17 @@ end
 
 screwdriver.ROTATE_FACE = 1
 screwdriver.ROTATE_AXIS = 2
+
+--
+-- запрет использования отвертки
+--
 screwdriver.disallow = function(pos, node, user, mode, new_param2)
 	return false
 end
+
+--
+-- простой поворот
+--
 screwdriver.rotate_simple = function(pos, node, user, mode, new_param2)
 	if mode ~= screwdriver.ROTATE_FACE then
 		return false
@@ -30,7 +41,7 @@ local function screwdriver_handler(itemstack, user, pointed_thing, mode, uses)
 		return
 	end
 
-	local pos = pointed_thing.under
+	local pos = pointed_thing.under     -- выделенный узел или nil
 
 	if minetest.is_protected(pos, user:get_player_name()) then
 		minetest.record_protection_violation(pos, user:get_player_name())
@@ -40,11 +51,13 @@ local function screwdriver_handler(itemstack, user, pointed_thing, mode, uses)
 	local node = minetest.get_node(pos)
 	local ndef = minetest.registered_nodes[node.name]
 	-- verify node is facedir (expected to be rotatable)
-	if not ndef or ndef.paramtype2 ~= "facedir" then
+	if not ndef or ndef.paramtype2 ~= "facedir" then  -- для выбранного узла тип "param2" должен быть "facedir"
 		return
 	end
 	-- Compute param2
-	local rotationPart = node.param2 % 32 -- get first 4 bits
+	--print("node.param2 = "..tostring(node.param2))
+	local rotationPart = node.param2 % 32 -- get first 4 bits (для тех кто забыл это остаток от деления)
+	--print("rotationPart = "..tostring(rotationPart))
 	local preservePart = node.param2 - rotationPart
 	local axisdir = math.floor(rotationPart / 4)
 	local rotation = rotationPart - axisdir * 4
@@ -56,7 +69,7 @@ local function screwdriver_handler(itemstack, user, pointed_thing, mode, uses)
 
 	local new_param2 = preservePart + rotationPart
 	local should_rotate = true
-
+	--print("new_param2 = "..tostring(new_param2))
 	if ndef and ndef.on_rotate then -- Node provides a handler, so let the handler decide instead if the node can be rotated
 		-- Copy pos and node because callback can modify it
 		local result = ndef.on_rotate(vector.new(pos),
