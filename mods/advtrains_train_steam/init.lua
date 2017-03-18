@@ -10,7 +10,7 @@ advtrains.register_wagon("newlocomotive", {
 	textures = {"advtrains_engine_steam.png"},
 	is_locomotive=true,
 	drives_on={default=true},
-	max_speed=6,
+	max_speed=10,
 	seats = {
 		{
 			name=S("Driver Stand (left)"),
@@ -70,7 +70,7 @@ advtrains.register_wagon("newlocomotive", {
 			attached = self.object,
 		})
 	end,
-	drops={"advtrains:boiler", "advtrains:chimney", "advtrains:driver_cab", "advtrains:wheel_pair 5", "lottores:tilkal_ingot 6"},
+	drops={"default:steelblock 4"},
 }, S("Steam Engine"), "advtrains_engine_steam_inv.png")
 
 advtrains.register_wagon("detailed_steam_engine", {
@@ -138,7 +138,7 @@ advtrains.register_wagon("detailed_steam_engine", {
 			attached = self.object,
 		})
 	end,
-	drops={"advtrains:boiler", "advtrains:chimney", "advtrains:driver_cab", "advtrains:wheel_pair 3", "lottores:tilkal_ingot 6"},
+	drops={"default:steelblock 4"},
 }, S("Detailed Steam Engine"), "advtrains_detailed_engine_steam_inv.png")
 
 advtrains.register_wagon("wagon_default", {
@@ -182,7 +182,7 @@ advtrains.register_wagon("wagon_default", {
 	visual_size = {x=1, y=1},
 	wagon_span=3.1,
 	collisionbox = {-1.0,-0.5,-1.0, 1.0,2.5,1.0},
-	drops={"advtrains:wheel_pair 4", "lottores:tilkal_ingot 6", "lottblocks:pine_chair", "lottblocks:pine_table", "default:steelblock 2"},
+	drops={"default:steelblock 4"},
 }, S("Passenger Wagon"), "advtrains_wagon_inv.png")
 advtrains.register_wagon("wagon_box", {
 	mesh="advtrains_wagon.b3d",
@@ -193,80 +193,50 @@ advtrains.register_wagon("wagon_box", {
 	visual_size = {x=1, y=1},
 	wagon_span=1.8,
 	collisionbox = {-1.0,-0.5,-1.0, 1.0,2.5,1.0},
-	drops={"advtrains:wheel_pair 4", "lottores:tilkal_ingot 6", "default:chest"},
+	drops={"default:steelblock 4"},
 	has_inventory = true,
 	get_inventory_formspec = function(self)
-        return "size[15,11]"..
-            "list[detached:advtrains_wgn_"..self.unique_id..";box;0,0;15,6;]"..
-            "list[current_player;main;4,7;8,4;]"..
-            "listring[]"
-    end,
-    inventory_list_sizes = {
-        box=15*11,
+		return "size[8,11]"..
+			"list[detached:advtrains_wgn_"..self.unique_id..";box;0,0;8,6;]"..
+			"list[current_player;main;0,7;8,4;]"..
+			"listring[]"
+	end,
+	inventory_list_sizes = {
+		box=8*6,
 	},
 }, S("Box Wagon"), "advtrains_wagon_box_inv.png")
 
-advtrains.register_wagon("wagon_post", {
-    mesh="advtrains_wagon.b3d",
-    textures = {"advtrains_wagon_post.png"},
-    drives_on={default=true},
-    max_speed=10,
-    seats = {},
-    visual_size = {x=1, y=1},
-    wagon_span=1.8,
-    collisionbox = {-1.0,-0.5,-1.0, 1.0,2.5,1.0},
-    drops={"advtrains:wheel_pair 4", "lottores:tilkal_ingot 6", "default:chest"},
-    has_inventory = true,
-    get_inventory_formspec = function(self)
-        return "size[13,10]"..
-            "list[detached:advtrains_wgn_"..self.unique_id..";box;0,0;13,5;]"..
-            "list[current_player;main;2,6;8,4;]"..
-            "listring[]"
-    end,
-    inventory_list_sizes = {
-        box=13*10,
-    },
-}, S("POST Wagon"), "advtrains_wagon_post_inv.png")
+minetest.register_craft({
+	output = 'advtrains:newlocomotive',
+	recipe = {
+		{'', '', 'advtrains:chimney'},
+		{'advtrains:driver_cab', 'dye:black', 'advtrains:boiler'},
+		{'advtrains:wheel', 'advtrains:wheel', 'advtrains:wheel'},
+	},
+})
 
--- minetest.register_craft({
--- 	output = 'advtrains:newlocomotive',
--- 	recipe = {
--- 		{'protector_lott:protect2', 'dye:black', 'advtrains:chimney'},
--- 		{'advtrains:driver_cab', 'lottores:galvorn_block', 'advtrains:boiler'},
--- 		{'advtrains:trolley', 'advtrains:wheel_pair', 'advtrains:trolley'},
--- 	},
--- })
---
--- minetest.register_craft({
--- 	output = 'advtrains:detailed_steam_engine',
--- 	recipe = {
--- 		{'protector_lott:protect2', 'dye:green', 'advtrains:chimney'},
--- 		{'advtrains:driver_cab', 'lottores:galvorn_block', 'advtrains:boiler'},
--- 		{'advtrains:wheel_pair', '', 'advtrains:trolley', 'carts:steam_mechanism'},
--- 	},
--- })
---
--- minetest.register_craft({
--- 	output = 'advtrains:wagon_default',
--- 	recipe = {
--- 		{'default:steelblock', 'dye:green', 'default:steelblock'},
--- 		{'lottblocks:pine_chair', 'lottores:galvorn_block', 'lottblocks:pine_table'},
--- 		{'advtrains:trolley', '', 'advtrains:trolley'},
--- 	},
--- })
--- minetest.register_craft({
--- 	output = 'advtrains:wagon_box',
--- 	recipe = {
--- 		{'group:wood', 'group:wood', 'group:wood'},
--- 		{'technic:iron_chest', 'lottores:galvorn_block', 'technic:iron_chest'},
--- 		{'advtrains:trolley', '', 'advtrains:trolley'},
--- 	},
--- })
--- minetest.register_craft({
--- 	output = 'advtrains:wagon_post',
--- 	recipe = {
--- 		{'group:wood', 'dye:blue', 'group:wood'},
--- 		{'default:chest', 'lottores:galvorn_block', 'default:chest'},
--- 		{'advtrains:trolley', '', 'advtrains:trolley'},
--- 	},
--- })
+minetest.register_craft({
+	output = 'advtrains:detailed_steam_engine',
+	recipe = {
+		{'', '', 'advtrains:chimney'},
+		{'advtrains:driver_cab', 'dye:green', 'advtrains:boiler'},
+		{'advtrains:wheel', 'advtrains:wheel', 'advtrains:wheel'},
+	},
+})
+
+minetest.register_craft({
+	output = 'advtrains:wagon_default',
+	recipe = {
+		{'default:steelblock', 'default:steelblock', 'default:steelblock'},
+		{'default:glass', 'dye:dark_green', 'default:glass'},
+		{'advtrains:wheel', 'advtrains:wheel', 'advtrains:wheel'},
+	},
+})
+minetest.register_craft({
+	output = 'advtrains:wagon_box',
+	recipe = {
+		{'group:wood', 'group:wood', 'group:wood'},
+		{'group:wood', 'default:chest', 'group:wood'},
+		{'advtrains:wheel', '', 'advtrains:wheel'},
+	},
+})

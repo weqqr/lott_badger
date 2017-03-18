@@ -31,7 +31,7 @@ end
 	when loading an existing object (with staticdata), it will be set
 	when instanciating a new object via add_entity, it is not set at the time on_activate is called.
 	then, wagon:initialize() will be called
-
+	
 	wagon will save only uid in staticdata, no serialized table
 ]]
 function wagon:on_activate(sd_uid, dtime_s)
@@ -150,10 +150,10 @@ function wagon:on_punch(puncher, time_from_last_punch, tool_capabilities, direct
 	   minetest.chat_send_player(puncher:get_player_name(), attrans("This wagon is owned by @1, you can't destroy it.", self.owner));
 	   return
 	end
-
+	
 	if minetest.setting_getbool("creative_mode") then
 		if not self:destroy() then return end
-
+		
 		local inv = puncher:get_inventory()
 		if not inv:contains_item("main", self.name) then
 			inv:add_item("main", self.name)
@@ -161,7 +161,7 @@ function wagon:on_punch(puncher, time_from_last_punch, tool_capabilities, direct
 	else
 		local pc=puncher:get_player_control()
 		if not pc.sneak then
-			minetest.chat_send_player(puncher:get_player_name(), attrans("Warning: If you destroy this wagon, you only get some steel back! If you are sure, shift-leftclick the wagon."))
+			minetest.chat_send_player(puncher:get_player_name(), attrans("Warning: If you destroy this wagon, you only get some steel back! If you are sure, hold Sneak and left-click the wagon."))
 			return
 		end
 
@@ -179,11 +179,11 @@ function wagon:destroy()
 	-- single left-click shows warning
 	-- shift leftclick destroys
 	-- not when a driver is inside
-
+	
 	for _,_ in pairs(self.seatp) do
 		return
 	end
-
+	
 	if self.custom_may_destroy then
 		if not self.custom_may_destroy(self, puncher, time_from_last_punch, tool_capabilities, direction) then
 			return
@@ -192,9 +192,9 @@ function wagon:destroy()
 	if self.custom_on_destroy then
 		self.custom_on_destroy(self, puncher, time_from_last_punch, tool_capabilities, direction)
 	end
-
+	
 	atprint("[wagon "..((self.unique_id and self.unique_id~="" and self.unique_id) or "no-id").."]: destroying")
-
+	
 	self.object:remove()
 
 	table.remove(self:train().trainparts, self.pos_in_trainparts)
@@ -207,17 +207,17 @@ end
 
 function wagon:on_step(dtime)
 	if not self:ensure_init() then return end
-
+	
 	local t=os.clock()
 	local pos = self.object:getpos()
-
+	
 	if not pos then
 		atprint("["..self.unique_id.."][fatal] missing position (object:getpos() returned nil)")
 		return
 	end
 
 	self.entity_name=self.name
-
+	
 	--is my train still here
 	if not self.train_id or not self:train() then
 		atprint("[wagon "..self.unique_id.."] missing train_id, destroying")
@@ -230,30 +230,13 @@ function wagon:on_step(dtime)
 	if not self.seatpc then
 		self.seatpc={}
 	end
-
+	
 	--Legacy: remove infotext since it does not work this way anyways
 	self.infotext=nil
 
 	--custom on_step function
 	if self.custom_on_step then
 		self:custom_on_step(self, dtime)
-	end
-
-	-- sound play
-	local SOUND_PLAY_RATE = 20
-
-	local vel = advtrains.abs_ceil(self:train().velocity)
-	if vel ~= 0 then
-			if not self:train().soundtime then
-					self:train().soundtime = 100
-			end
-self:train().soundtime = self:train().soundtime - vel * dtime * SOUND_PLAY_RATE / #self:train().trainparts
-			--self:train().soundtime = self:train().soundtime - vel * dtime * SOUND_PLAY_RATE
-			if self:train().soundtime <= 0 then
-					minetest.sound_play("steamtact", {pos=self:train().last_pos, max_hear_distance = 40, loop=false, gain=1})
-					minetest.sound_play("wagon", {pos=self:train().last_pos_prev, max_hear_distance = 20, loop=false, gain=3})
-					self:train().soundtime = 100
-			end
 	end
 
 	--driver control
@@ -265,7 +248,7 @@ self:train().soundtime = self:train().soundtime - vel * dtime * SOUND_PLAY_RATE 
 		if driver and driver:get_player_control_bits()~=self.seatpc[seatno] then
 			local pc=driver:get_player_control()
 			self.seatpc[seatno]=driver:get_player_control_bits()
-
+			
 			if seat.driving_ctrl_access then
 				--regular driver stand controls
 				advtrains.on_control_change(pc, self:train(), self.wagon_flipped)
@@ -277,7 +260,7 @@ self:train().soundtime = self:train().soundtime - vel * dtime * SOUND_PLAY_RATE 
 					if pc.up or pc.down then
 						self:get_off(seatno)
 					end
-				end
+				end		      
 			end
 			if pc.aux1 and pc.sneak then
 				self:get_off(seatno)
@@ -315,7 +298,7 @@ self:train().soundtime = self:train().soundtime - vel * dtime * SOUND_PLAY_RATE 
 			self.door_anim_timer = (self.door_anim_timer or 0) - dtime
 		end
 	end
-
+	
 	--DisCouple
 	if self.pos_in_trainparts and self.pos_in_trainparts>1 then
 		if gp.velocity==0 and not self.lock_couples then
@@ -347,10 +330,10 @@ self:train().soundtime = self:train().soundtime - vel * dtime * SOUND_PLAY_RATE 
 		advtrains.update_trainpart_properties(self.train_id)
 		return
 	end
-
+	
 	local index=advtrains.get_real_path_index(self:train(), self.pos_in_train)
 	--atprint("trainindex "..gp.index.." wagonindex "..index)
-
+	
 	--automatic get_on
 	--needs to know index and path
 	if self.door_entry and gp.door_open and gp.door_open~=0 and gp.velocity==0 then
@@ -365,21 +348,23 @@ self:train().soundtime = self:train().soundtime - vel * dtime * SOUND_PLAY_RATE 
 			local add = { x = (ix2.z-ix1.z)*gp.door_open, y = 0, z = (ix1.x-ix2.x)*gp.door_open }
 			local pts1=vector.round(vector.add(ix1, add))
 			local pts2=vector.round(vector.add(ix2, add))
-			local ckpts={
-				pts1,
-				pts2,
-				vector.add(pts1, {x=0, y=1, z=0}),
-				vector.add(pts2, {x=0, y=1, z=0}),
-			}
-			for _,ckpos in ipairs(ckpts) do
-				local cpp=minetest.pos_to_string(ckpos)
-				if advtrains.playersbypts[cpp] then
-					self:on_rightclick(advtrains.playersbypts[cpp])
+			if minetest.get_item_group(minetest.get_node(pts1).name, "platform")>0 then
+				local ckpts={
+					pts1,
+					pts2,
+					vector.add(pts1, {x=0, y=1, z=0}),
+					vector.add(pts2, {x=0, y=1, z=0}),
+				}
+				for _,ckpos in ipairs(ckpts) do
+					local cpp=minetest.pos_to_string(ckpos)
+					if advtrains.playersbypts[cpp] then
+						self:on_rightclick(advtrains.playersbypts[cpp])
+					end
 				end
 			end
 		end
 	end
-
+	
 	--position recalculation
 	local first_pos=gp.path[math.floor(index)]
 	local second_pos=gp.path[math.floor(index)+1]
@@ -388,7 +373,7 @@ self:train().soundtime = self:train().soundtime - vel * dtime * SOUND_PLAY_RATE 
 		self.object:setvelocity({x=0,y=0,z=0})
 		return
 	end
-
+	
 	--checking for environment collisions(a 3x3 cube around the center)
 	if not gp.recently_collided_with_env then
 		local collides=false
@@ -419,7 +404,7 @@ self:train().soundtime = self:train().soundtime - vel * dtime * SOUND_PLAY_RATE 
 			self.collision_count=nil
 		end
 	end
-
+	
 	--FIX: use index of the wagon, not of the train.
 	local velocity=(gp.velocity*gp.movedir)/(gp.path_dist[math.floor(index)] or 1)
 	local acceleration=(gp.last_accel or 0)/(gp.path_dist[math.floor(index)] or 1)
@@ -427,11 +412,11 @@ self:train().soundtime = self:train().soundtime - vel * dtime * SOUND_PLAY_RATE 
 	local actual_pos={x=first_pos.x-(first_pos.x-second_pos.x)*factor, y=first_pos.y-(first_pos.y-second_pos.y)*factor, z=first_pos.z-(first_pos.z-second_pos.z)*factor,}
 	local velocityvec={x=(first_pos.x-second_pos.x)*velocity*-1, z=(first_pos.z-second_pos.z)*velocity*-1, y=(first_pos.y-second_pos.y)*velocity*-1}
 	local accelerationvec={x=(first_pos.x-second_pos.x)*acceleration*-1, z=(first_pos.z-second_pos.z)*acceleration*-1, y=(first_pos.y-second_pos.y)*acceleration*-1}
-
+	
 	--some additional positions to determine orientation
 	local aposfwd=gp.path[math.floor(index+2)]
 	local aposbwd=gp.path[math.floor(index-1)]
-
+	
 	local yaw
 	if aposfwd and aposbwd then
 		yaw=advtrains.get_wagon_yaw(aposfwd, second_pos, first_pos, aposbwd, factor)+math.pi--TODO remove when cleaning up
@@ -441,11 +426,11 @@ self:train().soundtime = self:train().soundtime - vel * dtime * SOUND_PLAY_RATE 
 	if self.wagon_flipped then
 		yaw=yaw+math.pi
 	end
-
+	
 	self.updatepct_timer=(self.updatepct_timer or 0)-dtime
-	if not self.old_velocity_vector
+	if not self.old_velocity_vector 
 			or not vector.equals(velocityvec, self.old_velocity_vector)
-			or not self.old_acceleration_vector
+			or not self.old_acceleration_vector 
 			or not vector.equals(accelerationvec, self.old_acceleration_vector)
 			or self.old_yaw~=yaw
 			or self.updatepct_timer<=0 then--only send update packet if something changed
@@ -458,8 +443,8 @@ self:train().soundtime = self:train().soundtime - vel * dtime * SOUND_PLAY_RATE 
 			self:update_animation(gp.velocity)
 		end
 	end
-
-
+	
+	
 	self.old_velocity_vector=velocityvec
 	self.old_acceleration_vector=accelerationvec
 	self.old_yaw=yaw
@@ -494,7 +479,7 @@ function wagon:on_rightclick(clicker)
 		--advtrains.invert_train(self.train_id)
 		atprint(dump(self))
 		return
-	end
+	end	
 	local pname=clicker:get_player_name()
 	local no=self:get_seatno(pname)
 	if no then
@@ -545,7 +530,7 @@ function wagon:on_rightclick(clicker)
 				end
 				return
 			end
-
+			
 			local doors_open = self:train().door_open~=0 or clicker:get_player_control().sneak
 			for _,sgr in ipairs(self.assign_to_seat_group) do
 				if self:check_seat_group_access(pname, sgr) then
@@ -558,7 +543,7 @@ function wagon:on_rightclick(clicker)
 				end
 			end
 			minetest.chat_send_player(pname, attrans("Can't get on: wagon full or doors closed!"))
-			minetest.chat_send_player(pname, attrans("Use shift+click to open doors forcefully!"))
+			minetest.chat_send_player(pname, attrans("Use Sneak+rightclick to bypass closed doors!"))
 		else
 			self:show_get_on_form(pname)
 		end
@@ -568,7 +553,7 @@ end
 function wagon:get_on(clicker, seatno)
 	if not self.seatp then self.seatp={}end
 	if not self.seatpc then self.seatpc={}end--player controls in driver stands
-
+	
 	if not self.seats[seatno] then return end
 	local oldno=self:get_seatno(clicker:get_player_name())
 	if oldno then
@@ -608,24 +593,49 @@ function wagon:get_off(seatno)
 	local clicker = minetest.get_player_by_name(pname)
 	advtrains.player_to_train_mapping[pname]=nil
 	advtrains.clear_driver_hud(pname)
+	self.seatp[seatno]=nil
+	self.seatpc[seatno]=nil
 	if clicker then
 		atprint("get_off: detaching",clicker:get_player_name())
 		clicker:set_detach()
 		clicker:set_eye_offset({x=0,y=0,z=0}, {x=0,y=0,z=0})
-		local objpos=advtrains.round_vector_floor_y(self.object:getpos())
-		local yaw=self.object:getyaw()
-		local isx=(yaw < math.pi/4) or (yaw > 3*math.pi/4 and yaw < 5*math.pi/4) or (yaw > 7*math.pi/4)
-		--abuse helper function
-		for _,r in ipairs({-1, 1}) do
-			local p=vector.add({x=isx and r or 0, y=0, z=not isx and r or 0}, objpos)
-			local offp=vector.add({x=isx and r*2 or 0, y=1, z=not isx and r*2 or 0}, objpos)
-			if minetest.get_item_group(minetest.get_node(p).name, "platform")>0 then
-				minetest.after(0.2, function() clicker:setpos(offp) end)
+		local gp=self:train()
+		--code as in step - automatic get on
+		if self.door_entry and gp.door_open and gp.door_open~=0 and gp.velocity==0 then
+			local index=advtrains.get_real_path_index(gp, self.pos_in_train)
+			--using the mapping created by the trainlogic globalstep
+			for i, ino in ipairs(self.door_entry) do
+				local aci = index + ino*(self.wagon_flipped and -1 or 1)
+				local ix1=gp.path[math.floor(aci)]
+				local ix2=gp.path[math.floor(aci+1)]
+				-- the two wanted positions are ix1 and ix2 + (2nd-1st rotated by 90deg)
+				-- (x z) rotated by 90deg is (-z x)  (http://stackoverflow.com/a/4780141)
+				-- multiplied by 2 here, to place off on platform, y of add is 1.
+				local add = { x = (ix2.z-ix1.z)*gp.door_open, y = 0, z = (ix1.x-ix2.x)*gp.door_open}
+				local oadd = { x = (ix2.z-ix1.z)*gp.door_open*2, y = 1, z = (ix1.x-ix2.x)*gp.door_open*2}
+				local platpos=vector.round(vector.add(ix1, add))
+				local offpos=vector.round(vector.add(ix1, oadd))
+				atprint("platpos:", platpos, "offpos:", offpos)
+				if minetest.get_item_group(minetest.get_node(platpos).name, "platform")>0 then
+					minetest.after(0.2, function() clicker:setpos(offpos) end)
+					return
+				end
+			end
+		else--if not door_entry, use old method
+			local objpos=advtrains.round_vector_floor_y(self.object:getpos())
+			local yaw=self.object:getyaw()
+			local isx=(yaw < math.pi/4) or (yaw > 3*math.pi/4 and yaw < 5*math.pi/4) or (yaw > 7*math.pi/4)
+			--abuse helper function
+			for _,r in ipairs({-1, 1}) do
+				local p=vector.add({x=isx and r or 0, y=0, z=not isx and r or 0}, objpos)
+				local offp=vector.add({x=isx and r*2 or 0, y=1, z=not isx and r*2 or 0}, objpos)
+				if minetest.get_item_group(minetest.get_node(p).name, "platform")>0 then
+					minetest.after(0.2, function() clicker:setpos(offp) end)
+					return
+				end
 			end
 		end
 	end
-	self.seatp[seatno]=nil
-	self.seatpc[seatno]=nil
 end
 function wagon:show_get_on_form(pname)
 	if not self.initialized then return end
@@ -751,7 +761,7 @@ function wagon:seating_from_key_helper(pname, fields, no)
 		self:show_wagon_properties(pname)
 	end
 	if fields.dcwarn then
-		minetest.chat_send_player(pname, attrans("Doors are closed! Use shift-rightclick to open doors with force and get off!"))
+		minetest.chat_send_player(pname, attrans("Doors are closed! Use Sneak+rightclick to ignore the closed doors and get off!"))
 	end
 	if fields.off then
 		self:get_off(no)
@@ -785,18 +795,18 @@ end
 function advtrains.register_wagon(sysname, prototype, desc, inv_img)
 	setmetatable(prototype, {__index=wagon})
 	minetest.register_entity(":advtrains:"..sysname,prototype)
-
+	
 	minetest.register_craftitem(":advtrains:"..sysname, {
 		description = desc,
 		inventory_image = inv_img,
 		wield_image = inv_img,
 		stack_max = 1,
-
+		
 		on_place = function(itemstack, placer, pointed_thing)
 			if not pointed_thing.type == "node" then
 				return
 			end
-
+			
 
 			local node=minetest.get_node_or_nil(pointed_thing.under)
 			if not node then atprint("[advtrains]Ignore at placer position") return itemstack end
@@ -807,23 +817,23 @@ function advtrains.register_wagon(sysname, prototype, desc, inv_img)
 			end
 			local conn1=advtrains.get_track_connections(node.name, node.param2)
 			local id=advtrains.create_new_train_at(pointed_thing.under, advtrains.dirCoordSet(pointed_thing.under, conn1))
-
+			
 			local ob=minetest.add_entity(pointed_thing.under, "advtrains:"..sysname)
 			if not ob then
 				atprint("couldn't add_entity, aborting")
 			end
 			local le=ob:get_luaentity()
-
+			
 			le.owner=placer:get_player_name()
-
+			
 			local wagon_uid=le:init_new_instance(id, {})
-
+			
 			advtrains.add_wagon_to_train(le, id)
 			if not minetest.setting_getbool("creative_mode") then
 				itemstack:take_item()
 			end
 			return itemstack
-
+			
 		end,
 	})
 end
@@ -832,3 +842,5 @@ end
 	wagons can define update_animation(self, velocity) if they have a speed-dependent animation
 	this function will be called when the velocity vector changes or every 2 seconds.
 ]]
+
+

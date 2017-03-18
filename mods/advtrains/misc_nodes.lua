@@ -2,11 +2,10 @@
 
 function advtrains.register_platform(preset)
 	local ndef=minetest.registered_nodes[preset]
-	if not ndef then
+	if not ndef then 
 		minetest.log("warning", " register_platform couldn't find preset node "..preset)
 		return
 	end
-
 	local btex=ndef.tiles
 	if type(btex)=="table" then
 		btex=btex[1]
@@ -47,29 +46,22 @@ function advtrains.register_platform(preset)
 		paramtype = "light",
 		sunlight_propagates = true,
 	})
-	-- minetest.register_craft({
-	-- 	type="shapeless",
-	-- 	output = "advtrains:platform_high_"..nodename.." 1",
-	-- 	recipe = {
-	-- 		"dye:yellow", preset
-	-- 	},
-	-- })
-	-- minetest.register_craft({
-	-- 	type="shapeless",
-	-- 	output = "advtrains:platform_low_"..nodename.." 2",
-	-- 	recipe = {
-	-- 		"dye:yellow", "dye:yellow", preset
-	-- 	},
-	-- })
+	minetest.register_craft({
+		type="shapeless",
+		output = "advtrains:platform_high_"..nodename.." 4",
+		recipe = {
+			"dye:yellow", preset, preset
+		},
+	})
+	minetest.register_craft({
+		type="shapeless",
+		output = "advtrains:platform_low_"..nodename.." 4",
+		recipe = {
+			"dye:yellow", preset
+		},
+	})
 end
 
 
-advtrains.register_platform("stairs:slab_brick")
-advtrains.register_platform("stairs:slab_desert_stonebrick")
-advtrains.register_platform("stairs:slab_dungeon_stone")
-advtrains.register_platform("stairs:slab_marble")
-advtrains.register_platform("stairs:slab_marble_brick")
-advtrains.register_platform("stairs:slab_orc_brick")
-advtrains.register_platform("stairs:slab_pawement")
-advtrains.register_platform("stairs:slab_sandstonebrick")
-advtrains.register_platform("stairs:slab_stonebrick")
+advtrains.register_platform("default:stonebrick")
+advtrains.register_platform("default:sandstonebrick")

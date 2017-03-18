@@ -102,7 +102,10 @@ lottpotion = {
 		if test.speed + def.speed > limit.speed or test.jump + def.jump > limit.jump then return end
 		
 		itemstack:take_item()
-		local image_potion = itemstack:get_definition().inventory_image
+		local image_potion = nil
+		if itemstack:get_definition then
+		  image_potion = itemstack:get_definition().inventory_image
+		end  
 		if image_potion == nil then
 			image_potion = "lottpotion_bottle.png"
 		end	

@@ -1,0 +1,156 @@
+
+
+-------------
+  Separator
+-------------
+
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[Client]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[*Controls]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "enable_build_where_you_stand (Build inside player) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "free_move (Flying) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "fast_move (Fast movement) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "noclip (Noclip) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "cinematic (Cinematic mode) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid float setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "camera_smoothing (Camera smoothing) float 0.0 0.0 0.99"
+2017-03-11 18:48:30: ERROR[Main]: Invalid float setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "cinematic_camera_smoothing (Camera smoothing in cinematic mode) float 0.7 0.0 0.99"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "invert_mouse (Invert mouse) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "aux1_descends (Key use for climbing/descending) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "doubletap_jump (Double tap jump for fly) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "always_fly_fast (Always fly and fast) bool true"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "random_input (Random input) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "continuous_forward (Continuous forward) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "enable_joysticks (Enable Joysticks) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[*Network]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid integer setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "remote_port (Remote port) int 30000 1 65535"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "send_pre_v25_init (Support older servers) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "enable_local_map_saving (Saving map received from server) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "show_entity_selectionbox (Show entity selection boxes) bool true"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "enable_remote_media_server (Connect to external media server) bool true"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[*Graphics]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[**In-Game]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[***Basic]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "enable_vbo (VBO) bool true"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "enable_fog (Fog) bool true"
+2017-03-11 18:48:30: ERROR[Main]: Invalid enum setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "leaves_style (Leaves style) enum fancy fancy,simple,opaque"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "connected_glass (Connect glass) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "smooth_lighting (Smooth lighting) bool true"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "enable_clouds (Clouds) bool true"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "enable_3d_clouds (3D clouds) bool true"
+2017-03-11 18:48:30: ERROR[Main]: Invalid enum setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "node_highlighting (Node highlighting) enum box box,halo"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[***Filtering]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "mip_map (Mipmapping) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "anisotropic_filter (Anisotropic filtering) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "bilinear_filter (Bilinear filtering) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "trilinear_filter (Trilinear filtering) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "texture_clean_transparent (Clean transparent textures) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid enum setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "fsaa (FSAA) enum 0 0,1,2,4,8,16"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[***Shaders]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "enable_shaders (Shaders) bool true"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[****Tone Mapping]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "tone_mapping (Filmic tone mapping) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[****Bumpmapping]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "enable_bumpmapping (Bumpmapping) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "generate_normalmaps (Generate normalmaps) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid integer setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "normalmaps_smooth (Normalmaps sampling) int 0 0 2"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[****Parallax Occlusion]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "enable_parallax_occlusion (Parallax occlusion) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid integer setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "parallax_occlusion_mode (Parallax occlusion mode) int 1 0 1"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[****Waving Nodes]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "enable_waving_water (Waving water) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "enable_waving_leaves (Waving leaves) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "enable_waving_plants (Waving plants) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[***Advanced]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid integer setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "viewing_range (Viewing range) int 100 20 4000"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "fullscreen (Full screen) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "vsync (V-Sync) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid integer setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "fov (Field of view) int 72 30 160"
+2017-03-11 18:48:30: ERROR[Main]: Invalid integer setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "zoom_fov (Field of view for zoom) int 15 15 160"
+2017-03-11 18:48:30: ERROR[Main]: Invalid float setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "display_gamma (Gamma) float 1.8 1.0 3.0"
+2017-03-11 18:48:30: ERROR[Main]: Invalid enum setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "video_driver (Video driver) enum opengl null,software,burningsvideo,direct3d8,direct3d9,opengl"
+2017-03-11 18:48:30: ERROR[Main]: Invalid enum setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "3d_mode (3D mode) enum none none,anaglyph,interlaced,topbottom,sidebyside,pageflip"
+2017-03-11 18:48:30: ERROR[Main]: Invalid integer setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "console_alpha (Console alpha) int 200 0 255"
+2017-03-11 18:48:30: ERROR[Main]: Invalid integer setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "selectionbox_width (Selection box width) int 2 1 5"
+2017-03-11 18:48:30: ERROR[Main]: Invalid integer setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "crosshair_alpha (Crosshair alpha) int 255 0 255"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "desynchronize_mapblock_texture_animation (Desynchronize block animation) bool true"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "enable_mesh_cache (Mesh cache) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "enable_minimap (Minimap) bool true"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "minimap_shape_round (Round minimap) bool true"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "minimap_double_scan_height (Minimap scan height) bool true"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "directional_colored_fog (Colored fog) bool true"
+2017-03-11 18:48:30: ERROR[Main]: Invalid float setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "ambient_occlusion_gamma (Ambient occlusion gamma) float 2.2 0.25 4.0"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "inventory_items_animations (Inventory items animations) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid float setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "fog_start (Fog Start) float 0.4 0.0 0.99"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[**Menus]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "menu_clouds (Clouds in menu) bool true"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "gui_scaling_filter (GUI scaling filter) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "gui_scaling_filter_txr2img (GUI scaling filter txr2img) bool true"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "freetype (Freetype fonts) bool true"
+2017-03-11 18:48:30: ERROR[Main]: Invalid integer setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "font_shadow_alpha (Font shadow alpha) int 127 0 255"
+2017-03-11 18:48:30: ERROR[Main]: Invalid integer setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "fallback_font_shadow_alpha (Fallback font shadow alpha) int 128 0 255"
+2017-03-11 18:48:30: ERROR[Main]: Invalid enum setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "screenshot_format (Screenshot format) enum png png,jpg,bmp,pcx,ppm,tga"
+2017-03-11 18:48:30: ERROR[Main]: Invalid integer setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "screenshot_quality (Screenshot quality) int 0 0 100"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[**Advanced]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[*Sound]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "enable_sound (Sound) bool true"
+2017-03-11 18:48:30: ERROR[Main]: Invalid float setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "sound_volume (Volume) float 0.7 0.0 1.0"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[*Advanced]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "show_debug (Show debug info) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[Server / Singleplayer]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "server_announce (Announce server) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "disable_escape_sequences (Disable escape sequences) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[*Network]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "strict_protocol_version_checking (Strict protocol checking) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "ipv6_server (IPv6 server) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[**Advanced]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[*Game]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "enable_damage (Damage) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "unlimited_player_transfer_distance (Unlimited player transfer distance) bool true"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "enable_pvp (Player versus Player) bool true"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "disallow_empty_password (Disallow empty passwords) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "disable_anticheat (Disable anticheat) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "enable_rollback_recording (Rollback recording) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "ask_reconnect_on_crash (Ask to reconnect after crash) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[**Physics]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[**Advanced]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid enum setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "deprecated_lua_api_handling (Deprecated Lua API handling) enum legacy legacy,log,error"
+2017-03-11 18:48:30: ERROR[Main]: Invalid enum setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "sqlite_synchronous (Synchronous SQLite) enum 2 0,1,2"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "ignore_world_load_errors (Ignore world errors) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[*Mapgen]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid enum setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "mg_name (Mapgen name) enum v7 v5,v6,v7,flat,valleys,fractal,singlenode"
+2017-03-11 18:48:30: ERROR[Main]: Invalid integer setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "map_generation_limit (Map generation limit) int 31000 0 31000"
+2017-03-11 18:48:30: ERROR[Main]: Invalid flags setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "mg_flags (Mapgen flags) flags caves,dungeons,light,decorations caves,dungeons,light,decorations,nocaves,nodungeons,nolight,nodecorations"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[**Advanced]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "enable_mapgen_debug_info (Mapgen debug) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[***Mapgen v5]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[***Mapgen v6]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid flags setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "mgv6_spflags (Mapgen v6 flags) flags jungles,biomeblend,mudflow,snowbiomes,trees jungles,biomeblend,mudflow,snowbiomes,flat,trees,nojungles,nobiomeblend,nomudflow,nosnowbiomes,noflat,notrees"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[***Mapgen v7]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid flags setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "mgv7_spflags (Mapgen v7 flags) flags mountains,ridges mountains,ridges,floatlands,nomountains,noridges,nofloatlands"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[***Mapgen flat]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[***Mapgen fractal]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid integer setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "mgfractal_fractal (Mapgen fractal fractal) int 1 1 18"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[***Mapgen Valleys]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[****General]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid flags setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "mg_valleys_spflags (Valleys C Flags) flags altitude_chill,humid_rivers altitude_chill,noaltitude_chill,humid_rivers,nohumid_rivers"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[****Noises]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[*Security]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "secure.enable_security (Enable mod security) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[*Advanced]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[**Profiling]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "profiler.load (Load the game profiler) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid enum setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "profiler.default_report_format (Default report format) enum txt txt,csv,lua,json,json_pretty"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[***Instrumentation]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "instrument.entity (Entity methods) bool true"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "instrument.abm (Active Block Modifiers) bool true"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "instrument.lbm (Loading Block Modifiers) bool true"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "instrument.chatcommand (Chatcommands) bool true"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "instrument.global_callback (Global callbacks) bool true"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[****Advanced]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "instrument.builtin (Builtin) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "instrument.profiler (Profiler) bool false"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[Client and Server]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid enum setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "language (Language) enum   ,be,ca,cs,da,de,en,eo,es,et,fr,he,hu,id,it,ja,jbo,ko,ky,lt,nb,nl,pl,pt,pt_BR,ro,ru,sr_Cyrl,tr,uk,zh_CN,zh_TW"
+2017-03-11 18:48:30: ERROR[Main]: Invalid enum setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "debug_log_level (Debug log level) enum action ,warning,action,info,verbose"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "enable_ipv6 (IPv6) bool true"
+2017-03-11 18:48:30: ERROR[Main]: Invalid line in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "[*Advanced]"
+2017-03-11 18:48:30: ERROR[Main]: Invalid boolean setting in /home/alex/minetest-master/bin/../builtin/settingtypes.txt "high_precision_fpu (High-precision FPU) bool true"

@@ -1,6 +1,2 @@
 default
-carts
-castle
-lottpotion
-stairs
 mesecons?

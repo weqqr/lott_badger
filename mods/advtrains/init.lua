@@ -59,7 +59,7 @@ sid=function(id) return string.sub(id, -4) end
 dofile(advtrains.modpath.."/helpers.lua");
 --dofile(advtrains.modpath.."/debugitems.lua");
 
-advtrains.meseconrules =
+advtrains.meseconrules = 
 {{x=0,  y=0,  z=-1},
  {x=1,  y=0,  z=0},
  {x=-1, y=0,  z=0},
@@ -73,7 +73,7 @@ advtrains.meseconrules =
  {x=0,  y=1,  z=-1},
  {x=0,  y=-1, z=-1},
  {x=0, y=-2, z=0}}
-
+ 
 dofile(advtrains.modpath.."/trainlogic.lua")
 dofile(advtrains.modpath.."/trainhud.lua")
 dofile(advtrains.modpath.."/trackplacer.lua")
@@ -146,7 +146,7 @@ end
 advtrains.save = function()
 	--atprint("saving")
 	advtrains.invalidate_all_paths()
-
+	
 	-- update wagon saves
 	for _,wagon in pairs(minetest.luaentities) do
 		if wagon.is_wagon and wagon.initialized then
@@ -168,7 +168,7 @@ advtrains.save = function()
 			data.discouple=nil
 		end
 	end
-
+	
 	--versions:
 	-- 1 - Initial new save format.
 	local save_tbl={
