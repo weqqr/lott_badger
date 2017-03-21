@@ -63,5 +63,14 @@ function advtrains.register_platform(preset)
 end
 
 
-advtrains.register_platform("default:stonebrick")
-advtrains.register_platform("default:sandstonebrick")
+--advtrains.register_platform("default:stonebrick")
+--advtrains.register_platform("default:sandstonebrick")
+advtrains.register_platform("stairs:slab_brick")
+advtrains.register_platform("stairs:slab_desert_stonebrick")
+advtrains.register_platform("stairs:slab_dungeon_stone")
+advtrains.register_platform("stairs:slab_marble")
+advtrains.register_platform("stairs:slab_marble_brick")
+advtrains.register_platform("stairs:slab_orc_brick")
+advtrains.register_platform("stairs:slab_pawement")
+advtrains.register_platform("stairs:slab_sandstonebrick")
+advtrains.register_platform("stairs:slab_stonebrick")

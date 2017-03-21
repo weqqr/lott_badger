@@ -29,17 +29,29 @@ function cart:on_rightclick(clicker)
 	if not clicker or not clicker:is_player() then
 		return
 	end
-	if self.driver and clicker == self.driver then
-		self.driver = nil
-		clicker:set_detach()
-	elseif not self.driver then
-		self.driver = clicker
-		clicker:set_attach(self.object, "", {x=0,y=5,z=0}, {x=0,y=0,z=0})
+	if clicker:get_player_control().sneak then
+		local formspec = "size[8,9]"..
+						"list[detached:" .. self.inventoryname .. ";main;0,0;8,4;]"..
+						"list[current_player;main;0,5;8,4;]"
+		minetest.show_formspec(clicker:get_player_name(), "cart_inv", formspec)
+	else
+		if self.driver and clicker == self.driver then
+			self.driver = nil
+			clicker:set_detach()
+		elseif not self.driver then
+			self.driver = clicker
+			clicker:set_attach(self.object, "", {x=0,y=5,z=0}, {x=0,y=0,z=0})
+		end
 	end
 end
 
 function cart:on_activate(staticdata, dtime_s)
+	self.inventoryname = string.gsub(tostring(self),"table: ","")
+	self.inventory = minetest.create_detached_inventory(self.inventoryname, nil)
+	self.inventory:set_size("main",32)
+	
 	self.object:set_armor_groups({immortal=1})
+	
 	if staticdata then
 		local tmp = minetest.deserialize(staticdata)
 		if tmp then
@@ -48,15 +60,27 @@ function cart:on_activate(staticdata, dtime_s)
 		if tmp and tmp.pre_stop_dir then
 			self.pre_stop_dir = tmp.pre_stop_dir
 		end
+		if tmp and tmp.stacks then
+			for i=1,#tmp.stacks,1 do
+				self.inventory:set_stack("main",i,tmp.stacks[i])
+			end
+		end
 	end
 	self.old_pos = self.object:getpos()
 	self.old_velocity = self.velocity
 end
 
 function cart:get_staticdata()
+	local stacks = {}
+	local list = self.inventory:get_list("main")
+	for i=1,#list,1 do
+		table.insert(stacks,list[i]:to_string())
+	end
+	
 	return minetest.serialize({
 		velocity = self.velocity,
 		pre_stop_dir = self.pre_stop_dir,
+		stacks = stacks
 	})
 end
 
@@ -66,7 +90,7 @@ function cart:on_punch(puncher, time_from_last_punch, tool_capabilities, directi
 		return
 	end
 
-	if puncher:get_player_control().sneak then
+	if puncher:get_player_control().sneak and self.inventory:is_empty("main") then
 		self.object:remove()
 		local inv = puncher:get_inventory()
 		if minetest.setting_getbool("creative_mode") then
