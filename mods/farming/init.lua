@@ -369,7 +369,7 @@ minetest.register_craft({
 minetest.register_craft({
 	type = "cooking",
 	cooktime = 12,
-	output = "farming:bread",
+	output = "farming:bread 3",
 	recipe = "lottfarming:yeast_dough"
 })
 

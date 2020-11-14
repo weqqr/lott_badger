@@ -9,7 +9,7 @@ minetest.register_craftitem("lottfarming:cookie_cracker", {
 minetest.register_craft({
 	type = "cooking",
 	cooktime = 7,
-	output = "lottfarming:cookie_cracker",
+	output = "lottfarming:cookie_cracker 4",
 	recipe = "lottfarming:salted_dough"
 })
 
