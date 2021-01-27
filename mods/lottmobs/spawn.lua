@@ -98,9 +98,8 @@ mobs:spawn_specific("lottmobs:half_troll", {"default:snowblock"},       {"air"},
 mobs:spawn_specific("lottmobs:half_troll", {"default:dirt_with_snow"},  {"air"}, -1, 15, 30, 12000, 2, 0, 31000)
 mobs:spawn_specific("lottmobs:half_troll", {"lottmapgen:angsnowblock"}, {"air"}, -1, 20, 30, 9000,  3, 0, 31000)
 
-mobs:spawn_specific("lottmobs:nazgul", {"default:stone"}, {"air"}, -1, 2, 30, 30000, 2, -31000, -50)
-
-mobs:spawn_specific("lottmobs:witch_king", {"default:stone"}, {"air"}, -1, 2, 30, 60000, 1, -31000, -1000)
+mobs:spawn_specific("lottmobs:nazgul", {"lottmapgen:mordor_stone"}, {"air"}, -1, 20, 30, 30000, 2, -50, 31000)
+mobs:spawn_specific("lottmobs:witch_king", {"lottmapgen:mordor_stone"}, {"air"}, -1, 20, 30, 60000, 1, -50, 31000)
 
 mobs:spawn_specific("lottmobs:balrog", {"default:stone"}, {"air"}, -1, 2, 30, 100000, 1, -31000, -10000)
 
