@@ -12,6 +12,8 @@ elseif minetest.get_modpath("u_skins") then
 	skin_mod = "u_skins"
 elseif minetest.get_modpath("wardrobe") then
 	skin_mod = "wardrobe"
+elseif minetest.get_modpath("lord_classes") then
+	skin_mod = "lord"
 end
 
 function multiskin:init(player)
@@ -84,6 +86,11 @@ end
 function multiskin:get_preview(name)
 	if skin_mod == "u_skins" then
 		return multiskin:get_skin_name(name).."_preview.png"
+	elseif skin_mod == "lord" then
+		local race = races.get_race(name)
+		local gender = races.get_gender(name)
+		local skin = races.get_skin(name)
+		return "preview_"..race.."_"..gender..skin.."_face.png"
 	end
 end
 

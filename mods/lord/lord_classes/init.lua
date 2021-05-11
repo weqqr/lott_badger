@@ -172,7 +172,8 @@ function races.update_player(name, race_and_gender, skin)
 	-- TODO: caching
 	local texture = races.get_texture_name(race, gender, skin) -- e.g. shadow_female.png
 	multiskin[name].skin = texture
-	multiskin:update_player_visuals(minetest.get_player_by_name(name))
+	armor:set_player_armor(minetest.get_player_by_name(name))
+	armor:update_inventory(minetest.get_player_by_name(name))
 end
 
 -- Returns the race and the gender of specified player
