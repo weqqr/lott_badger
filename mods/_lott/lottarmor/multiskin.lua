@@ -90,7 +90,7 @@ function multiskin:get_preview(name)
 		local race = races.get_race(name)
 		local gender = races.get_gender(name)
 		local skin = races.get_skin(name)
-		return "preview_"..race.."_"..gender..skin.."_face.png"
+		return races.get_face_preview_name(race, gender, skin)
 	end
 end
 
