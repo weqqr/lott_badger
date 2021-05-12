@@ -12,7 +12,8 @@ local form_header = "size[7,4]"..
 					"background[7,4;1,1;gui_formbg.png;true]"
 
 races = {
-	save_path = minetest.get_worldpath() .. "/races.txt"
+	save_path = minetest.get_worldpath() .. "/races.txt",
+	update_cbs = {},
 }
 
 races.list = {
@@ -171,9 +172,20 @@ function races.update_player(name, race_and_gender, skin)
 
 	-- TODO: caching
 	local texture = races.get_texture_name(race, gender, skin) -- e.g. shadow_female.png
-	multiskin[name].skin = texture
-	armor:set_player_armor(minetest.get_player_by_name(name))
-	armor:update_inventory(minetest.get_player_by_name(name))
+	local face = races.get_face_preview_name(race, gender, skin)
+
+	for _, cb in ipairs(races.update_cbs) do
+		cb(name, race, gender, skin, texture, face)
+	end
+end
+
+function races.register_update_callback(cb)
+	if cb == nil then
+		-- fool proof
+		minetest.log("Trying to register nil callback")
+		return
+	end
+	table.insert(races.update_cbs, cb)
 end
 
 -- Returns the race and the gender of specified player
@@ -316,6 +328,14 @@ end
 
 function races.get_texture_name(race, gender, skin)
 	return string.format("%s_%s%d.png", race, gender, skin)
+end
+
+function races.get_face_preview_name(race, gender, skin)
+	if race ~= "shadow" then
+		return string.format("preview_%s_%s%d_face.png", race, gender, skin)
+	else
+		return nil
+	end
 end
 
 -- Generates number sequence starting with 1 and ending with `max`

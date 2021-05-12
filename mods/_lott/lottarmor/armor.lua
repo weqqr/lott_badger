@@ -611,3 +611,10 @@ minetest.register_globalstep(function(dtime)
 		time = 0
 	end
 end)
+
+races.register_update_callback(function(name, race, gender, skin, texture, face)
+	minetest.log("Updating player "..name..": "..race.." "..gender.." "..skin.." "..texture.." "..face)
+	multiskin[name].skin = texture
+	armor:set_player_armor(minetest.get_player_by_name(name))
+	armor:update_inventory(minetest.get_player_by_name(name))
+end)
