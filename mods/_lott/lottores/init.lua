@@ -1,6 +1,4 @@
-local SL = lord.require_intllib()
-
--- Ores:
+local SL = minetest.get_translator("lottores")
 
 minetest.register_node("lottores:limestone_ore", {
 	description = SL("Limestone Ore"),
@@ -112,265 +110,6 @@ minetest.register_node("lottores:red_gem_ore", {
 	},
 	sounds = default.node_sound_stone_defaults(),
 })
-
--- Ores Spawning
-
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "lottores:limestone_ore",
-	wherein        = "default:stone",
-	clust_scarcity = 9*9*9,
-	clust_num_ores = 5,
-	clust_size     = 2,
-	y_min     = -60,
-	y_max     = -10,
-})
-
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "lottores:limestone_ore",
-	wherein        = "default:stone",
-	clust_scarcity = 7*7*7,
-	clust_num_ores = 5,
-	clust_size     = 2,
-	y_min     = -31000,
-	y_max     = -61,
-})
-
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "lottores:limestone_ore",
-	wherein        = "default:stone",
-	clust_scarcity = 24*24*24,
-	clust_num_ores = 15,
-	clust_size     = 6,
-	y_min     = -31000,
-	y_max     = -50,
-})
-
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "lottores:silver_ore",
-	wherein        = "default:stone",
-	clust_scarcity = 15*15*15,
-	clust_num_ores = 3,
-	clust_size     = 2,
-	y_min     = -200,
-	y_max     = -50,
-})
-
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "lottores:silver_ore",
-	wherein        = "default:stone",
-	clust_scarcity = 13*13*13,
-	clust_num_ores = 6,
-	clust_size     = 3,
-	y_min     = -31000,
-	y_max     = -201,
-})
-
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "lottores:tin_ore",
-	wherein        = "default:stone",
-	clust_scarcity = 12*12*12,
-	clust_num_ores = 5,
-	clust_size     = 2,
-	y_min     = -60,
-	y_max     = -20,
-})
-
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "lottores:tin_ore",
-	wherein        = "default:stone",
-	clust_scarcity = 9*9*9,
-	clust_num_ores = 10,
-	clust_size     = 5,
-	y_min     = -31000,
-	y_max     = -61,
-})
-
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "lottores:lead_ore",
-	wherein        = "default:stone",
-	clust_scarcity = 12*12*12,
-	clust_num_ores = 4,
-	clust_size     = 3,
-	y_min     = -60,
-	y_max     = -30,
-})
-
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "lottores:lead_ore",
-	wherein        = "default:stone",
-	clust_scarcity = 9*9*9,
-	clust_num_ores = 5,
-	clust_size     = 3,
-	y_min     = -31000,
-	y_max     = -61,
-})
-
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "lottores:rough_rock",
-	wherein        = "default:stone",
-	clust_scarcity = 15*15*15,
-	clust_num_ores = 3,
-	clust_size     = 2,
-	y_min     = -300,
-	y_max     = -70,
-})
-
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "lottores:rough_rock",
-	wherein        = "default:stone",
-	clust_scarcity = 13*13*13,
-	clust_num_ores = 3,
-	clust_size     = 2,
-	y_min     = -31000,
-	y_max     = -301,
-})
-
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "lottores:blue_gem_ore",
-	wherein        = "default:stone",
-	clust_scarcity = 14*14*14,
-	clust_num_ores = 4,
-	clust_size     = 2,
-	y_min     = -31000,
-	y_max     = -256,
-})
-
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "lottores:red_gem_ore",
-	wherein        = "default:stone",
-	clust_scarcity = 14*14*14,
-	clust_num_ores = 4,
-	clust_size     = 2,
-	y_min     = -31000,
-	y_max     = -256,
-})
-
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "lottores:white_gem_ore",
-	wherein        = "default:stone",
-	clust_scarcity = 14*14*14,
-	clust_num_ores = 4,
-	clust_size     = 2,
-	y_min     = -31000,
-	y_max     = -256,
-})
-
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "lottores:mithril_ore",
-	wherein        = "default:stone",
-	clust_scarcity = 18*18*18,
-	clust_num_ores = 4,
-	clust_size     = 3,
-	y_min     = -255,
-	y_max     = -128,
-})
-
-minetest.register_ore({
-	ore_type       = "scatter",
-	ore            = "lottores:mithril_ore",
-	wherein        = "default:stone",
-	clust_scarcity = 16*16*16,
-	clust_num_ores = 4,
-	clust_size     = 3,
-	y_min     = -31000,
-	y_max     = -256,
-})
-
--- Craft Items
-
-minetest.register_craftitem("lottores:limestone_lump", {
-	description = SL("Limestone Lump"),
-	inventory_image = "lottores_limestone_lump.png",
-})
-
-minetest.register_craftitem("lottores:rough_rock_lump", {
-	description = SL("Rough Rock Lump"),
-	inventory_image = "lottores_rough_rock_lump.png",
-})
-
-minetest.register_craftitem("lottores:silver_lump", {
-	description = SL("Silver Lump"),
-	inventory_image = "lottores_silver_lump.png",
-})
-
-minetest.register_craftitem("lottores:silver_ingot", {
-	description = SL("Silver Ingot"),
-	inventory_image = "lottores_silver_ingot.png",
-})
-
-minetest.register_craftitem("lottores:tin_lump", {
-	description = SL("Tin Lump"),
-	inventory_image = "lottores_tin_lump.png",
-})
-
-minetest.register_craftitem("lottores:tin_ingot", {
-	description = SL("Tin Ingot"),
-	inventory_image = "lottores_tin_ingot.png",
-})
-
-minetest.register_craftitem("lottores:lead_lump", {
-	description = SL("Lead Lump"),
-	inventory_image = "lottores_lead_lump.png",
-})
-
-minetest.register_craftitem("lottores:lead_ingot", {
-	description = SL("Lead Ingot"),
-	inventory_image = "lottores_lead_ingot.png",
-})
-
-minetest.register_craftitem("lottores:mithril_lump", {
-	description = SL("Mithril Lump"),
-	inventory_image = "lottores_mithril_lump.png",
-})
-
-minetest.register_craftitem("lottores:mithril_ingot", {
-	description = SL("Mithril Ingot"),
-	inventory_image = "lottores_mithril_ingot.png",
-})
-
-minetest.register_craftitem("lottores:galvorn_ingot", {
-	description = SL("Galvorn Ingot"),
-	inventory_image = "lottores_galvorn_ingot.png",
-     groups = {forbidden=1},
-})
-
-minetest.register_craftitem("lottores:tilkal_ingot", {
-	description = SL("Tilkal Ingot"),
-	inventory_image = "lottores_tilkal_ingot.png",
-     groups = {forbidden=1},
-})
-
-minetest.register_craftitem("lottores:blue_gem", {
-	description = SL("Blue Gem"),
-	inventory_image = "lottores_bluegem.png",
-})
-
-minetest.register_craftitem("lottores:red_gem", {
-	description = SL("Red Gem"),
-	inventory_image = "lottores_redgem.png",
-})
-
-minetest.register_craftitem("lottores:white_gem", {
-	description = SL("White Gem"),
-	inventory_image = "lottores_whitegem.png",
-})
-
--- Nodes
 
 minetest.register_node("lottores:tilkal", {
 	description = SL("Tilkal"),
@@ -560,8 +299,6 @@ minetest.register_node("lottores:galvorn_block", {
 	sounds = default.node_sound_metal_defaults(),
 })
 
--- Ithildin
-
 minetest.register_node("lottores:ithildin_0", {
 	description = SL("Ithildin"),
 	tiles = {"ithildin_0.png"},
@@ -668,333 +405,6 @@ minetest.register_node("lottores:ithildin_lamp_1", {
 	sounds = default.node_sound_glass_defaults(),
 })
 
--- Functions
-
-minetest.register_abm(
-	{nodenames = {"lottores:ithildin_1"},
-	interval = 1,
-	chance = 1,
-	action = function(pos, node, active_object_count, active_object_count_wider)
-		if minetest.get_timeofday() > 0.2 and minetest.get_timeofday() < 0.8
-		then
-			minetest.set_node(pos, {name="lottores:ithildin_0"})
-		end
-	end,
-})
-
-minetest.register_abm(
-	{nodenames = {"lottores:ithildin_0"},
-	interval = 1,
-	chance = 1,
-	action = function(pos, node, active_object_count, active_object_count_wider)
-		if minetest.get_timeofday() < 0.2 or minetest.get_timeofday() > 0.8
-		then
-			minetest.set_node(pos, {name="lottores:ithildin_1"})
-		end
-	end,
-})
-
-minetest.register_abm(
-	{nodenames = {"lottores:ithildin_stone_1"},
-	interval = 1,
-	chance = 1,
-	action = function(pos, node, active_object_count, active_object_count_wider)
-		if minetest.get_timeofday() > 0.2 and minetest.get_timeofday() < 0.8
-		then
-			minetest.set_node(pos, {name="lottores:ithildin_stone_0"})
-		end
-	end,
-})
-
-minetest.register_abm(
-	{nodenames = {"lottores:ithildin_stone_0"},
-	interval = 1,
-	chance = 1,
-	action = function(pos, node, active_object_count, active_object_count_wider)
-		if minetest.get_timeofday() < 0.2 or minetest.get_timeofday() > 0.8
-		then
-			minetest.set_node(pos, {name="lottores:ithildin_stone_1"})
-		end
-	end,
-})
-
-minetest.register_abm(
-	{nodenames = {"lottores:ithildin_stonelamp_1"},
-	interval = 1,
-	chance = 1,
-	action = function(pos, node, active_object_count, active_object_count_wider)
-		if minetest.get_timeofday() > 0.2 and minetest.get_timeofday() < 0.8
-		then
-			minetest.set_node(pos, {name="lottores:ithildin_stonelamp_0"})
-		end
-	end,
-})
-
-minetest.register_abm(
-	{nodenames = {"lottores:ithildin_stonelamp_0"},
-	interval = 1,
-	chance = 1,
-	action = function(pos, node, active_object_count, active_object_count_wider)
-		if minetest.get_timeofday() < 0.2 or minetest.get_timeofday() > 0.8
-		then
-			minetest.set_node(pos, {name="lottores:ithildin_stonelamp_1"})
-		end
-	end,
-})
-
-minetest.register_abm(
-	{nodenames = {"lottores:ithildin_lamp_1"},
-	interval = 1,
-	chance = 1,
-	action = function(pos, node, active_object_count, active_object_count_wider)
-		if minetest.get_timeofday() > 0.2 and minetest.get_timeofday() < 0.8
-		then
-			minetest.set_node(pos, {name="lottores:ithildin_lamp_0"})
-		end
-	end,
-})
-
-minetest.register_abm(
-	{nodenames = {"lottores:ithildin_lamp_0"},
-	interval = 1,
-	chance = 1,
-	action = function(pos, node, active_object_count, active_object_count_wider)
-		if minetest.get_timeofday() < 0.2 or minetest.get_timeofday() > 0.8
-		then
-			minetest.set_node(pos, {name="lottores:ithildin_lamp_1"})
-		end
-	end,
-})
-
--- Stairs & Slabs
-
-stairs.register_stair_and_slab("tilkal", "lottores:tilkal",
-        {forbidden=1},
-		{"lottores_tilkal.png"},
-		SL("Tilkal Stair"),
-		SL("Tilkal Slab"),
-		default.node_sound_metal_defaults())
-
-stairs.register_stair_and_slab("limestone", "lottores:limestone",
-        {cracky=3, stone=2},
-		{"lottores_limestone_ore.png"},
-		SL("Limestone Stair"),
-		SL("Limestone Slab"),
-		default.node_sound_stone_defaults())
-
-stairs.register_stair_and_slab("marble", "lottores:marble",
-        {cracky=3},
-		{"lottores_marble.png"},
-		SL("Marble Stair"),
-		SL("Marble Slab"),
-		default.node_sound_stone_defaults())
-
-stairs.register_stair_and_slab("silver_block", "lottores:silver_block",
-        {cracky=1,level=2},
-		{"lottores_silver_block.png"},
-		SL("Silver Stair"),
-		SL("Silver Slab"),
-		default.node_sound_metal_defaults())
-
-stairs.register_stair_and_slab("tin_block", "lottores:tin_block",
-        {cracky=1},
-		{"lottores_tin_block.png"},
-		SL("Tin Stair"),
-		SL("Tin Slab"),
-		default.node_sound_metal_defaults())
-
-stairs.register_stair_and_slab("lead_block", "lottores:lead_block",
-        {cracky=1},
-		{"lottores_lead_block.png"},
-		SL("Lead Stair"),
-		SL("Lead Slab"),
-		default.node_sound_metal_defaults())
-
-stairs.register_stair_and_slab("mithril_block", "lottores:mithril_block",
-        {cracky=1,level=2},
-		{"lottores_mithril_block.png"},
-		SL("Mithril Stair"),
-		SL("Mithril Slab"),
-		default.node_sound_metal_defaults())
-
-stairs.register_stair_and_slab("galvorn_block", "lottores:galvorn_block",
-        {cracky=1,level=2,forbidden=1},
-		{"lottores_galvorn_block.png"},
-		SL("Galvorn Stair"),
-		SL("Galvorn Slab"),
-		default.node_sound_metal_defaults())
-
--- Crafting
-
-minetest.register_craft({
-	type = "shapeless",
-	output = "lottores:galvorn_ingot",
-	recipe = {"lottores:lead_ingot", "default:mese_crystal"}
-})
-
-minetest.register_craft({
-	output = 'lottores:tilkal',
-	recipe = {
-		{'lottores:tilkal_ingot', 'lottores:tilkal_ingot', 'lottores:tilkal_ingot'},
-		{'lottores:tilkal_ingot', 'lottores:tilkal_ingot', 'lottores:tilkal_ingot'},
-		{'lottores:tilkal_ingot', 'lottores:tilkal_ingot', 'lottores:tilkal_ingot'},
-	}
-})
-
-minetest.register_craft({
-	output = 'lottores:tilkal_ingot 9',
-	recipe = {
-		{'lottores:tilkal'},
-	}
-})
-
-minetest.register_craft({
-	type = "shapeless",
-	output = "lottores:tilkal_ingot",
-	recipe = {
-		"default:copper_ingot",
-		"lottores:silver_ingot",
-		"lottores:tin_ingot",
-		"lottores:lead_ingot",
-		"default:steel_ingot",
-		"default:gold_ingot",
-	}
-})
-
-minetest.register_craft({
-	output = 'lottores:limestone',
-	recipe = {
-		{'lottores:limestone_lump', 'lottores:limestone_lump', 'lottores:limestone_lump'},
-		{'lottores:limestone_lump', 'lottores:limestone_lump', 'lottores:limestone_lump'},
-		{'lottores:limestone_lump', 'lottores:limestone_lump', 'lottores:limestone_lump'},
-	}
-})
-
-minetest.register_craft({
-	output = 'lottores:limestone_lump 9',
-	recipe = {
-		{'lottores:limestone'},
-	}
-})
-
-minetest.register_craft({
-	type = "cooking",
-	output = "lottores:marble",
-	recipe = "lottores:limestone",
-})
-
-minetest.register_craft({
-	type = "cooking",
-	output = "lottores:geodes_crystal_1",
-	recipe = "lottores:rough_rock_lump",
-})
-
-minetest.register_craft({
-	output = 'lottores:silver_block',
-	recipe = {
-		{'lottores:silver_ingot', 'lottores:silver_ingot', 'lottores:silver_ingot'},
-		{'lottores:silver_ingot', 'lottores:silver_ingot', 'lottores:silver_ingot'},
-		{'lottores:silver_ingot', 'lottores:silver_ingot', 'lottores:silver_ingot'},
-	}
-})
-
-minetest.register_craft({
-	output = 'lottores:silver_ingot 9',
-	recipe = {
-		{'lottores:silver_block'},
-	}
-})
-
-minetest.register_craft({
-	output = 'lottores:tin_block',
-	recipe = {
-		{'lottores:tin_ingot', 'lottores:tin_ingot', 'lottores:tin_ingot'},
-		{'lottores:tin_ingot', 'lottores:tin_ingot', 'lottores:tin_ingot'},
-		{'lottores:tin_ingot', 'lottores:tin_ingot', 'lottores:tin_ingot'},
-	}
-})
-
-minetest.register_craft({
-	output = 'lottores:tin_ingot 9',
-	recipe = {
-		{'lottores:tin_block'},
-	}
-})
-
-minetest.register_craft({
-	output = 'lottores:lead_block',
-	recipe = {
-		{'lottores:lead_ingot', 'lottores:lead_ingot', 'lottores:lead_ingot'},
-		{'lottores:lead_ingot', 'lottores:lead_ingot', 'lottores:lead_ingot'},
-		{'lottores:lead_ingot', 'lottores:lead_ingot', 'lottores:lead_ingot'},
-	}
-})
-
-minetest.register_craft({
-	output = 'lottores:lead_ingot 9',
-	recipe = {
-		{'lottores:lead_block'},
-	}
-})
-
-minetest.register_craft({
-	output = 'lottores:mithril_block',
-	recipe = {
-		{'lottores:mithril_ingot', 'lottores:mithril_ingot', 'lottores:mithril_ingot'},
-		{'lottores:mithril_ingot', 'lottores:mithril_ingot', 'lottores:mithril_ingot'},
-		{'lottores:mithril_ingot', 'lottores:mithril_ingot', 'lottores:mithril_ingot'},
-	}
-})
-
-minetest.register_craft({
-	output = 'lottores:mithril_ingot 9',
-	recipe = {
-		{'lottores:mithril_block'},
-	}
-})
-
-minetest.register_craft({
-	output = 'lottores:galvorn_block',
-	recipe = {
-		{'lottores:galvorn_ingot', 'lottores:galvorn_ingot', 'lottores:galvorn_ingot'},
-		{'lottores:galvorn_ingot', 'lottores:galvorn_ingot', 'lottores:galvorn_ingot'},
-		{'lottores:galvorn_ingot', 'lottores:galvorn_ingot', 'lottores:galvorn_ingot'},
-	}
-})
-
-minetest.register_craft({
-	output = 'lottores:galvorn_ingot 9',
-	recipe = {
-		{'lottores:galvorn_block'},
-	}
-})
-
-minetest.register_craft({
-	type = "shapeless",
-	output = "lottores:ithildin_1",
-	recipe = {"lottores:mithril_ingot", "lottores:geodes_crystal_1"}
-})
-
-minetest.register_craft({
-	type = "shapeless",
-	output = "lottores:ithildin_stone_1",
-	recipe = {"lottores:ithildin_1", "group:stone"}
-})
-
-minetest.register_craft({
-	type = "shapeless",
-	output = "lottores:ithildin_lamp_1",
-	recipe = {"lottores:mithril_ingot", "lottother:blue_torch"}
-})
-
-minetest.register_craft({
-	type = "shapeless",
-	output = "lottores:ithildin_stonelamp_1",
-	recipe = {"lottores:ithildin_lamp_1", "group:stone"}
-})
-
---Blocks
-
 minetest.register_node("lottores:mineral_pearl", {
 	description = SL("Pearl Ore"),
 	tiles = {"default_sand.png^lottores_mineral_pearl.png"},
@@ -1003,7 +413,7 @@ minetest.register_node("lottores:mineral_pearl", {
 	groups = {snappy=2,cracky=3,oddly_breakable_by_hand=3},
 	drop = {
 		items = {
-			{
+		{
 				items = {'lottores:pearl'},
 			},
 			{
@@ -1065,123 +475,91 @@ minetest.register_node("lottores:salt", {
 	sounds = default.node_sound_defaults(),
 })
 
--- Craft items
+minetest.register_craftitem("lottores:limestone_lump", {
+	description = SL("Limestone Lump"),
+	inventory_image = "lottores_limestone_lump.png",
+})
+
+minetest.register_craftitem("lottores:rough_rock_lump", {
+	description = SL("Rough Rock Lump"),
+	inventory_image = "lottores_rough_rock_lump.png",
+})
+
+minetest.register_craftitem("lottores:silver_lump", {
+	description = SL("Silver Lump"),
+	inventory_image = "lottores_silver_lump.png",
+})
+
+minetest.register_craftitem("lottores:silver_ingot", {
+	description = SL("Silver Ingot"),
+	inventory_image = "lottores_silver_ingot.png",
+})
+
+minetest.register_craftitem("lottores:tin_lump", {
+	description = SL("Tin Lump"),
+	inventory_image = "lottores_tin_lump.png",
+})
+
+minetest.register_craftitem("lottores:tin_ingot", {
+	description = SL("Tin Ingot"),
+	inventory_image = "lottores_tin_ingot.png",
+})
+
+minetest.register_craftitem("lottores:lead_lump", {
+	description = SL("Lead Lump"),
+	inventory_image = "lottores_lead_lump.png",
+})
+
+minetest.register_craftitem("lottores:lead_ingot", {
+	description = SL("Lead Ingot"),
+	inventory_image = "lottores_lead_ingot.png",
+})
+
+minetest.register_craftitem("lottores:mithril_lump", {
+	description = SL("Mithril Lump"),
+	inventory_image = "lottores_mithril_lump.png",
+})
+
+minetest.register_craftitem("lottores:mithril_ingot", {
+	description = SL("Mithril Ingot"),
+	inventory_image = "lottores_mithril_ingot.png",
+})
+
+minetest.register_craftitem("lottores:galvorn_ingot", {
+	description = SL("Galvorn Ingot"),
+	inventory_image = "lottores_galvorn_ingot.png",
+     groups = {forbidden=1},
+})
+
+minetest.register_craftitem("lottores:tilkal_ingot", {
+	description = SL("Tilkal Ingot"),
+	inventory_image = "lottores_tilkal_ingot.png",
+     groups = {forbidden=1},
+})
+
+minetest.register_craftitem("lottores:blue_gem", {
+	description = SL("Blue Gem"),
+	inventory_image = "lottores_bluegem.png",
+})
+
+minetest.register_craftitem("lottores:red_gem", {
+	description = SL("Red Gem"),
+	inventory_image = "lottores_redgem.png",
+})
+
+minetest.register_craftitem("lottores:white_gem", {
+	description = SL("White Gem"),
+	inventory_image = "lottores_whitegem.png",
+})
 
 minetest.register_craftitem("lottores:pearl", {
 	description = SL("Pearl"),
 	inventory_image = "lottores_pearl.png",
 })
 
--- Crafting
-
-minetest.register_craft( {
-	output = 'lottores:pearl_block',
-	recipe = {
-		{ 'craft "lottores:pearl"', 'craft "lottores:pearl"', 'craft "lottores:pearl"' },
-		{ 'craft "lottores:pearl"', 'craft "lottores:pearl"', 'craft "lottores:pearl"' },
-		{ 'craft "lottores:pearl"', 'craft "lottores:pearl"', 'craft "lottores:pearl"' },
-	}
-})
-
-minetest.register_craft({
-	output = 'lottores:salt_block',
-	recipe = {
-		{'lottores:salt', 'lottores:salt', 'lottores:salt'},
-		{'lottores:salt', 'lottores:salt', 'lottores:salt'},
-		{'lottores:salt', 'lottores:salt', 'lottores:salt'},
-	}
-})
-
-minetest.register_craft({
-	output = 'lottores:salt 9',
-	recipe = {
-		{'lottores:salt_block'},
-	}
-})
-
-minetest.register_craft({
-	output = 'lottores:pearl_block',
-	recipe = {
-		{'lottores:pearl', 'lottores:pearl', 'lottores:pearl'},
-		{'lottores:pearl', 'lottores:pearl', 'lottores:pearl'},
-		{'lottores:pearl', 'lottores:pearl', 'lottores:pearl'},
-	}
-})
-
-minetest.register_craft({
-	output = 'lottores:pearl 9',
-	recipe = {
-		{'lottores:pearl_block'},
-	}
-})
-
-stairs.register_stair_and_slab("pearl", "lottores:pearl_block",
-		{cracky=3,oddly_breakable_by_hand=3},
-		{"lottores_pearl_block.png"},
-		SL("Pearl Stair"),
-		SL("Pearl Slab"),
-		default.node_sound_glass_defaults())
-
-stairs.register_stair_and_slab("salt", "lottores:salt_block",
-		{cracky=3,oddly_breakable_by_hand=3},
-		{"lottores_salt_block.png"},
-		SL("Salt Stair"),
-		SL("Salt Slab"),
-		default.node_sound_stone_defaults())
-
--- Cooking
--- Серебро и изделия
-minetest.register_craft({
-	type = "cooking",
-	output = "lottores:silver_ingot",
-	recipe = "lottores:silver_lump",
-})
-minetest.register_craft({
-	type = "cooking",
-	output = "lottores:silver_ingot",
-	recipe = "group:silver_item",
-})
-
--- Мифрил и изделия
-minetest.register_craft({
-	type = "cooking",
-	output = "lottores:mithril_ingot",
-	recipe = "lottores:mithril_lump",
-})
-minetest.register_craft({
-	type = "cooking",
-	output = "lottores:mithril_ingot",
-	recipe = "group:mithril_item",
-})
-
--- Олово и изделия
-minetest.register_craft({
-	type = "cooking",
-	output = "lottores:tin_ingot",
-	recipe = "lottores:tin_lump",
-})
-minetest.register_craft({
-	type = "cooking",
-	output = "lottores:tin_ingot",
-	recipe = "group:tin_item",
-})
-
--- Свинец и изделия
-minetest.register_craft({
-	type = "cooking",
-	output = "lottores:lead_ingot",
-	recipe = "lottores:lead_lump",
-})
-minetest.register_craft({
-	type = "cooking",
-	output = "lottores:lead_ingot",
-	recipe = "group:lead_item",
-})
-
-minetest.register_craft({
-	type = "cooking",
-	output = "lottores:galvorn_ingot",
-	recipe = "group:galvorn_item",
-})
+dofile(minetest.get_modpath("lottores") .. "/mapgen.lua")
+dofile(minetest.get_modpath("lottores") .. "/functions.lua")
+dofile(minetest.get_modpath("lottores") .. "/stairs.lua")
+dofile(minetest.get_modpath("lottores") .. "/crafting.lua")
 
 lord.mod_loaded()
