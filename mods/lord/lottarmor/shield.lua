@@ -1,4 +1,4 @@
-local SL = lord.require_intllib()
+local SL = minetest.get_translator("lottarmor")
 
 -- Register Shields
 minetest.register_tool("lottarmor:shield_wood", {

@@ -1,0 +1,8 @@
+# textdomain: lord_names_rules
+Invalid character name=Invalid character name:
+Invalid character name. Contact to the administration.=Invalid character name. Contact to the administration.
+Your name must contain more than 2 symbols;=Your name must contain more than 2 symbols;
+Your name must be less than 14 symbols;=Your name must be less than 14 symbols;
+Your name must contain only letters; '-' and '_' are also allowed;=Your name must contain only letters; '-' and '_' are also allowed;
+Your name must begin with capital letters;=Your name must begin with capital letters;
+

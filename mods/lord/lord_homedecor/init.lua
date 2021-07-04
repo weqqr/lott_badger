@@ -1,7 +1,7 @@
 -- Minetest 0.4 mod: lord_homedecor
 -- See README.txt for licensing and other information.
 
-local SL = lord.require_intllib()
+local SL = minetest.get_translator("lord_homedecor")
 local modpath = minetest.get_modpath("lord_homedecor")
 
 -- Definitions made by this mod that other mods can use too

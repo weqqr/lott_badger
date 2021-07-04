@@ -1,0 +1,8 @@
+# textdomain: lord_names_rules
+Invalid character name=Введённое Вами имя не соответствует правилам сервера:
+Invalid character name. Contact to the administration.=Имя Вашего персонажа не соответствует правилам сервера, обратитесь к администрации.
+Your name must contain more than 2 symbols;=Имя персонажа должно содержать хотябы 3 символа;
+Your name must be less than 14 symbols;=Имя персонажа должно быть короче 14-ти символов;
+Your name must contain letters only; '-' and '_' are also allowed;=Имя персонажа должно содержать только буквы латинского алфавита, допускаются символы '-' и '_'
+Your name must begin with capital letters;=Имя персонажа должно начинаться с заглавной латинской буквы;
+

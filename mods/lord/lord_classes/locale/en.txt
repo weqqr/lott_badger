@@ -1,7 +1,0 @@
-### init.lua ###
-change_shadow = Now you're a shadow
-change_orc = Now you're an orc
-change_man = Now you're a human
-change_dwarf = Now you're a dwarf
-change_hobbit = Now you're a hobbit
-change_elf = Now you're an elf

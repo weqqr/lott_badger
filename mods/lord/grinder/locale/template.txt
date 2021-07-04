@@ -1,0 +1,9 @@
+# textdomain: grinder
+Grinder is empty=
+Roll=
+Grinding=
+Grinder Grinding=
+Grinder Out Of Heat=
+Grinder=
+Coal dust=
+

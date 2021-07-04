@@ -1,4 +1,4 @@
-local S = lord.require_intllib()
+local S = minetest.get_translator("lord_homedecor")
 
 local pot_colors = {"terracotta"}
 

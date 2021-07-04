@@ -1,6 +1,6 @@
 -- Mob Attacks
 
-local SL = lord.require_intllib()
+local SL = minetest.get_translator("arrows")
 
 local flame_node = function(pos)
 	local n = minetest.get_node(pos).name

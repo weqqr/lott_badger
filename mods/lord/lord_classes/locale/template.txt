@@ -1,0 +1,28 @@
+# textdomain: lord_classes
+Hobbit=
+Shadow=
+Choose a skin for your character:=
+Player '%s' does not exist=
+Back=
+Elf=
+Orc=
+change_hobbit=
+OK=
+Second chance=
+change_man=
+change_dwarf=
+Female=
+<player name>=
+change_elf=
+change_shadow=
+Cancel=
+Too few arguments. Try %s to show the correct usage=
+Man=
+Please select the race you wish to be:=
+Dwarf=
+Ability to change race and gender of a player.=
+Give another chance to a player.=
+change_orc=
+Male=
+Won't give another chance=
+

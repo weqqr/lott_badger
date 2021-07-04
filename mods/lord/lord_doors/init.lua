@@ -1,4 +1,4 @@
-local SL = lord.require_intllib()
+local SL = minetest.get_translator("lord_doors")
 
 local name = "gondor"
 local description = "Gondor"

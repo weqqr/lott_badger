@@ -1,4 +1,4 @@
-local SL = lord.require_intllib()
+local SL = minetest.get_translator("tools")
 
 tools.pick = {
 	get_recipes = function(source)

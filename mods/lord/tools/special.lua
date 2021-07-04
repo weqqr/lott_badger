@@ -1,4 +1,4 @@
-local SL = lord.require_intllib()
+local SL = minetest.get_translator("tools")
 
 minetest.register_tool("tools:sword_elven", {
 	description = SL("Elven Sword"),

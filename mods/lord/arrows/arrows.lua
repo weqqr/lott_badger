@@ -1,5 +1,5 @@
 
-local SL = lord.require_intllib()
+local SL = minetest.get_translator("arrows")
 
 local KFR = 0.0002
 

@@ -1,0 +1,27 @@
+# textdomain: lord_money
+Exchange can not be done, ended goods.=
+Copper Coin=
+Customer gives (pay here !)=
+Customer gets=
+Silver Coin=
+Owner wants=
+Exchanged!=
+In your store=
+Gold Coin=
+Exchange can not be done, check if you put all items!=
+Exchange can not be done, ended place.=
+Exchange shop (owned by=
+Owner, Use(E)+Place(RMB) for customer interface=
+Owner gives=
+Diamond Coin=
+License=
+ended goods.=
+ended place.=
+Customers gave:=
+Shop Chest=
+You want:=
+Your stock:=
+Exchange can not be done, check if you have place!=
+Exchange=
+In exchange, you give:=
+

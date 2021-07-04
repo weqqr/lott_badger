@@ -1,2 +1,2 @@
-### init.lua ###
-Gondor Door	=
+# textdomain: lord_doors
+Gondor Door=

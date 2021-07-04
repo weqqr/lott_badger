@@ -1,4 +1,4 @@
-local SL = lord.require_intllib()
+local SL = minetest.get_translator("lord_money")
 
 -- money
 minetest.register_craftitem("lord_money:diamond_coin", {

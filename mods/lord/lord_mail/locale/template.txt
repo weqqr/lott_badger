@@ -1,0 +1,14 @@
+# textdomain: lord_mail
+Book=
+Paper=
+Title=
+by=
+Book With Text=
+Mail Chest=
+Letter=
+Contents=
+Mail for=
+You have new post=
+Save=
+Your post full=
+

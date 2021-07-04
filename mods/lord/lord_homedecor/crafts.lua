@@ -2,7 +2,7 @@
 --
 -- Mostly my own code; overall template borrowed from game default
 
-local S = lord.require_intllib()
+local S = minetest.get_translator("lord_homedecor")
 
 -- misc craftitems
 

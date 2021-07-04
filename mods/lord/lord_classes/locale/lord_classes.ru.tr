@@ -1,0 +1,29 @@
+# textdomain: lord_classes
+Shadow=Тень
+Dwarf=Гномы
+Elf=Эльфы
+Man=Люди
+Orc=Орки
+Hobbit=Хоббиты
+Male=Муж.
+Female=Жен.
+Cancel=Отмена
+Back=Назад
+OK=Применить
+(Warning: choosing the race will teleport \nyou at the race spawn!)=(Предупреждение: выбор расы переместит \nВас на соответствующий Спаун)
+Ability to change race and gender of a player.=Возможность изменять расу и пол игроку.
+Please select the race you wish to be:=Выберите расу и пол для вашего персонажа:
+Choose a skin for your character:=Выберите скин для вашего персонажа:
+change_shadow=Теперь вы - Тень.
+change_orc=Теперь вы - Орк
+change_man=Теперь вы - Человек
+change_dwarf=Теперь вы - Гном
+change_hobbit=Теперь вы - Хоббит
+change_elf=Теперь вы - Эльф
+Too few arguments. Try %s to show the correct usage=Слишком мало аргументов. Напишите %s, чтобы показать, как использовать эту команду
+Player '%s' does not exist=Игрока '%s' не существует
+<player name>=<имя игрока>
+Won't give another chance=Ещё одного шанса не будет
+Second chance=Второй шанс
+Give another chance to a player.=Дать еще один шанс игроку
+

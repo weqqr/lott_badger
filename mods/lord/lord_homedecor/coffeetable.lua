@@ -1,4 +1,4 @@
-local SL = lord.require_intllib()
+local SL = minetest.get_translator("lord_homedecor")
 
 minetest.register_node("lord_homedecor:coffeetable_back", {
 	description = SL("Coffee Table"),

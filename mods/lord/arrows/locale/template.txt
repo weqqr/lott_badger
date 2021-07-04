@@ -1,0 +1,10 @@
+# textdomain: arrows
+Dwarvern Throwing Axe=
+mithril arrow=
+Steel Throwing Axe=
+mithril bolt=
+Galvorn Throwing Axe=
+steel arrow=
+Elven Throwing Axe=
+steel bolt=
+

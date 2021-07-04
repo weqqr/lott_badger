@@ -1,4 +1,4 @@
-local SL = lord.require_intllib()
+local SL = minetest.get_translator("lord_base_privs")
 
 minetest.register_privilege("interact",		SL("Can interact with things and modify the world"))
 minetest.register_privilege("teleport",		SL("Can use /teleport command"))

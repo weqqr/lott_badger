@@ -1,4 +1,4 @@
-local SL = lord.require_intllib()
+local SL = minetest.get_translator("lottarmor")
 
 dofile(minetest.get_modpath(minetest.get_current_modname()).."/multiskin.lua")
 dofile(minetest.get_modpath(minetest.get_current_modname()).."/armor.lua")

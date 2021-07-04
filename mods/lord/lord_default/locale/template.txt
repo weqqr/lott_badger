@@ -1,0 +1,4 @@
+# textdomain: lord_default
+
+Scorched Stuff=
+Charcoal Lump=

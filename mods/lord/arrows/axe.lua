@@ -1,4 +1,4 @@
-local SL = lord.require_intllib()
+local SL = minetest.get_translator("arrows")
 
 AXE_MASS = 3.0
 AXE_VEL = 20

@@ -1,0 +1,9 @@
+# textdomain: npc
+
+Save=
+Back=
+Hide=
+Show=
+Delete=
+Close=
+Take=

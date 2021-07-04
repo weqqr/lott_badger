@@ -1,0 +1,27 @@
+# textdomain: lord_money
+Diamond Coin=Diamond Coin
+Gold Coin=Gold Coin
+Silver Coin=Silver Coin
+Copper Coin=Copper Coin
+Shop Chest=Shop Chest
+License=License
+Customer gives (pay here !)=Customer gives (pay here !)
+Customer gets=Customer gets
+Owner wants=Owner wants
+Owner gives=Owner gives
+Exchange=Exchange
+Customers gave:=Customers gave:
+Your stock:=Your stock:
+You want:=You want:
+In exchange, you give:=In exchange, you give:
+Owner, Use(E)+Place(RMB) for customer interface=Owner, Use(E)+Place(RMB) for customer interface
+Exchange shop (owned by=Exchange shop (owned by
+Exchange can not be done, ended goods.=Exchange can not be done, ended goods.
+Exchange can not be done, ended place.=Exchange can not be done, ended place.
+Exchange can not be done, check if you put all items!=Exchange can not be done, check if you put all items!
+Exchange can not be done, check if you have place!=Exchange can not be done, check if you have place!
+In your store=In your store
+ended goods.=ended goods.
+ended place.=ended place.
+Exchanged!=Exchanged!
+

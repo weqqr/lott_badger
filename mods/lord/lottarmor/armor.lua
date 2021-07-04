@@ -1,4 +1,4 @@
-local SL = lord.require_intllib()
+local SL = minetest.get_translator("lottarmor")
 
 -- Global Defaults - use armor.conf to override these
 

@@ -1,0 +1,18 @@
+# textdomain: lord_base_privs
+Can interact with things and modify the world=Can interact with things and modify the world
+Can use /teleport command=Can use /teleport command
+Can teleport other players=Can teleport other players
+Can use /time=Can use /time
+Can modify privileges=Can modify privileges
+Can modify 'shout' and 'interact' privileges=Can modify 'shout' and 'interact' privileges
+Can do server maintenance stuff=Can do server maintenance stuff
+Can speak in chat=Can speak in chat
+Can ban and unban players=Can ban and unban players
+Can kick players=Can kick players
+Can use /give and /giveme=Can use /give and /giveme
+Can use /setpassword and /clearpassword=Can use /setpassword and /clearpassword
+Can use the rollback functionality=Can use the rollback functionality
+Can fly using the free_move mode=Can fly using the free_move mode
+Can walk fast using the fast_move mode=Can walk fast using the fast_move mode
+Can fly through walls=Can fly through walls
+
